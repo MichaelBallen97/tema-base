@@ -30,6 +30,8 @@
 
     {{ content_for_header }}
 
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
@@ -51,13 +53,13 @@
   </head>
 
   <body>
-    {% sections 'header' %}
+    {% section 'header' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer' %}
+    {% section 'footer' %}
 
     <script>
       window.shopUrl = '{{ request.origin }}';
