@@ -4,11 +4,15 @@
   - custom_class: String
   - width: String-Url
   - heigt: String
+  - alt: String
 
   Use:
   {% render 'render-image'
     src: "image_url"
     custom_class: "img"
+    alt: "Product image"
+    width: "100"
+    height: "100"
   %} 
 {% endcomment %}
 
@@ -21,5 +25,11 @@
 %}
 
 <img
-  src="" 
-  alt="">
+  class="{{ custom_class }}"
+  loading="lazy"
+  src="{{ img_src }}" 
+  alt=""
+  width="{{ width }}"
+  height="{{ height }}"
+  alt="{{ alt | default: "placeholder image" }}"
+>
