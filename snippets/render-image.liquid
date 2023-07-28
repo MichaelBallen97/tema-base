@@ -1,0 +1,25 @@
+{% comment %}
+  Variables:
+  - src: String-Url
+  - custom_class: String
+  - width: String-Url
+  - heigt: String
+
+  Use:
+  {% render 'render-image'
+    src: "image_url"
+    custom_class: "img"
+  %} 
+{% endcomment %}
+
+{% liquid
+  if src != blank
+    assign img_src = src
+  else
+    assign img_src = "https://cdn.shopify.com/s/files/1/0797/9184/9790/files/placeholder.png?v=1690519838" 
+  endif
+%}
+
+<img
+  src="" 
+  alt="">
