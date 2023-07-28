@@ -1,6 +1,7 @@
 {
   "current": {
     "logo_width": 90,
+    "background": "#ffffff",
     "primary_btn_bg_hover": "#364b5e",
     "primary_btn_border_hover": "#364b5e",
     "type_header_font": "roboto_n4",
