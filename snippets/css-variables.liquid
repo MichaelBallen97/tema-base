@@ -1,0 +1,47 @@
+{% style %}
+  :root {
+    /* Typography */
+    --font-family-titles: {{ settings.type_header_font.family }};
+    --font-family-text: {{ settings.type_body_font.family }};
+    --font-size-title: {{ settings.h1_size }}px;
+    --font-size-subtitle: {{ settings.h2_size }}px;
+    --font-size-text: {{ settings.text_size }}px;
+
+    /* Layout */
+    --max-page-with: {{ settings.page_width }}px;
+    --page--padding: {{ settings.page_padding }}px;
+    --space-sections: {{ settings.spacing_sections }}px;
+
+    /* Colors */
+    --background-page: {{ settings.background }};
+    --text-color: {{ settings.text }};
+    --title-color: {{ settings.title }};
+    --link-color: {{ settings.links }};
+
+    --btn-primary-bg: {{ settings.primary_btn_bg }};
+    --btn-primary-color: {{ settings.primary_btn_text }};
+    --btn-primary-border: {{ settings.primary_btn_border }};
+    --btn-primary-bg-hover: {{ settings.primary_btn_bg_hover }};
+    --btn-primary-color-hover: {{ settings.primary_btn_text_hover }};
+    --btn-primary-border-hover: {{ settings.primary_btn_border_hover }};
+
+    --btn-secondary-bg: {{ settings.secondary_btn_bg }};
+    --btn-secondary-color: {{ settings.secondary_btn_text }};
+    --btn-secondary-border: {{ settings.secondary_btn_border }};
+    --btn-secondary-bg-hover: {{ settings.secondary_btn_bg_hover }};
+    --btn-secondary-color-hover: {{ settings.secondary_btn_text_hover }};
+    --btn-secondary-border-hover: {{ settings.secondary_btn_border_hover }};
+
+    /* Butons */
+    --btn-primary-border-size: {{ settings.primary_btn_border_size }}px;
+    --btn-primary-vertical-padding: {{ settings.primary_btn_padding_y }}px;
+    --btn-primary-horizontal-padding: {{ settings.primary_btn_padding_x }}px;
+    --btn-primary-border-radius: {{ settings.primary_btn_border_radius }}px;
+
+    --btn-secondary-border-size: {{ settings.secondary_btn_border_size }}px;
+    --btn-secondary-vertical-padding: {{ settings.secondary_btn_padding_y }}px;
+    --btn-secondary-horizontal-padding: {{ settings.secondary_btn_padding_x }}px;
+    --btn-secondary-border-radius: {{ settings.secondary_btn_border_radius }}px;
+
+  }
+{% endstyle %}

@@ -1,0 +1,35 @@
+{% comment %}
+  Variables:
+  - style: "primary" | "secondary"
+  - custom_class: String
+  - href: String-Url
+  - content: String
+
+  Use:
+  {% render 'link'
+    style: "primary"
+    custom_class: "popup-button"
+    href: "https://www.google.com"
+    content: "visitar"
+  %} 
+{% endcomment %}
+
+{% liquid
+  assign btn_class = "btn-primary"
+  if style == "primary"
+    assign btn_class = "btn-primary"
+  elsif style == "secondary"
+    assign btn_class = "btn-secondary"
+  endif
+%}
+
+<a 
+  class="{{ btn_class }} {{ custom_class }}"
+  href="{{ href }}"
+  >
+  {% if content != blank %}
+    {{ content }}
+  {% else %}
+    Link
+  {% endif %}
+</a>

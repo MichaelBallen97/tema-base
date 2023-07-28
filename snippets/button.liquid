@@ -1,0 +1,37 @@
+{% comment %}
+  Variables:
+  - style: "primary" | "secondary"
+  - custom_class: String
+  - type: "submit" | "button" | "reset"
+  - content: String
+
+  Use:
+  {% render 'button'
+    style: "primary"
+    custom_class: "popup-button"
+    type: "submit"
+    content: "Enviar datos"
+  %} 
+{% endcomment %}
+
+{% liquid
+  assign btn_class = "btn-primary"
+  if style == "primary"
+    assign btn_class = "btn-primary"
+  elsif style == "secondary"
+    assign btn_class = "btn-secondary"
+  endif
+%}
+
+<button 
+  class="{{ btn_class }} {{ custom_class }}"
+  {% if type != blank %}
+    type="{{ type }}"
+  {% endif %}
+  >
+  {% if content != blank %}
+    {{ content }}
+  {% else %}
+    Boton
+  {% endif %}
+</button>
