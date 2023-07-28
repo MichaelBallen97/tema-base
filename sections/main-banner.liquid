@@ -1,0 +1,143 @@
+{{ 'section.main-banner.css' | asset_url | stylesheet_tag }}
+
+<section class="banner-container banner-container-{{ section.id }}">
+  {% if section.settings.overlay %}
+    <div class="main-banner--overlay"></div>
+  {% endif %}
+
+  {% assign img_src = section.settings.banner_image | image_url %}
+  {% render 'render-image'
+    src: img_src
+    tag: "Main banner"
+    custom_class: "main-banner--img"
+  %}
+
+  <section class="main-banner--content {{ section.settings.content_position }}">
+    <article class="main-banner--content-article">
+      {% if section.settings.banner_heading %}
+        <h1>{{ section.settings.banner_heading }}</h1>
+      {% endif %}
+  
+      {% if section.settings.banner_paragraph %}
+        <p>{{ section.settings.banner_paragraph }}</p>
+      {% endif %}
+  
+      {% if section.settings.banner_cta %}
+        {% liquid
+          assign cta_text = section.settings.banner_cta
+          assign cta_link = section.settings.banner_cta_url
+          assign cta_style = section.settings.style_cta
+        %}
+  
+        {% render 'link'
+          style: cta_style
+          content: cta_text
+          href: cta_link
+          custom_class: "main-banner--content-cta"
+        %}
+      {% endif %}
+    </article>
+  </section>
+</section>
+
+{% schema %}
+{
+  "name": "main-banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "overlay",
+      "label": "Show overlay",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_mobile",
+      "label": "Banner image for mobile"
+    },
+    {
+      "type": "text",
+      "id": "banner_heading",
+      "label": "Banner heading"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_paragraph",
+      "label": "Banner Paragraph"
+    },
+    {
+      "type": "text",
+      "id": "banner_cta",
+      "label": "Banner CTA"
+    },
+    {
+      "type": "select",
+      "id": "style_cta",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "url",
+      "id": "banner_cta_url",
+      "label": "Banner CTA link"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "center-left",
+          "label": "Center left"
+        },
+        {
+          "value": "center-right",
+          "label": "Center right"
+        },
+        {
+          "value": "down-left",
+          "label": "Down left"
+        },
+        {
+          "value": "down-right",
+          "label": "Down right"
+        },
+        {
+          "value": "up-left",
+          "label": "Up left"
+        },
+        {
+          "value": "up-right",
+          "label": "Up right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Banner"
+    }
+  ]
+}
+{% endschema %}

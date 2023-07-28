@@ -225,9 +225,9 @@
         "id": "page_padding",
         "min": 0,
         "max": 300,
-        "step": 1,
+        "step": 5,
         "unit": "px",
-        "label": "t:settings_schema.layout.settings.spacing_sections.label",
+        "label": "Page padding",
         "default": 50
       }
     ]

@@ -1,0 +1,87 @@
+.banner-container {
+  width: 100%;
+  position: relative;
+}
+
+.banner-container .main-banner--img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.banner-container .main-banner--overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 2;
+}
+
+.banner-container .main-banner--content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #FFF;
+  z-index: 3;
+}
+
+.banner-container .main-banner--content.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-container .main-banner--content.center-left {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.banner-container .main-banner--content.center-right {
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+}
+
+.banner-container .main-banner--content.down-left {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.banner-container .main-banner--content.down-right {
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.banner-container .main-banner--content.up-left {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.banner-container .main-banner--content.up-right {
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: right;
+}
+
+.banner-container .main-banner--content .main-banner--content-article h1,
+.banner-container .main-banner--content .main-banner--content-article p
+ {
+  margin-bottom: 10px;
+}
+
+.banner-container .main-banner--content .main-banner--content-cta {
+  margin-top: 10px;
+  display: inline-block;
+}
