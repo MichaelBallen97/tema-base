@@ -5,10 +5,14 @@
     },
     "info-cta": {
       "type": "paragraph-with-cta"
+    },
+    "image-text": {
+      "type": "image-with-text"
     }
   },
   "order": [
     "main-banner",
-    "info-cta"
+    "info-cta",
+    "image-text"
   ]
 }

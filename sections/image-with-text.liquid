@@ -1,7 +1,7 @@
-{{ 'section.paragraph.css' | asset_url | stylesheet_tag }}
+{{ 'section.image-text.css' | asset_url | stylesheet_tag }}
 
 {% liquid
-  assign cta_style = section.settings.cta_style
+  assign img_src = section.settings.image | image_url
   assign ptop = section.settings.padding_top
   assign pbutton = section.settings.padding_button
   assign pleft = section.settings.padding_left
@@ -9,34 +9,46 @@
 %}
 
 {% style %}
-  .section-paragraph-container-{{ section.id }} {
+  .section-image-text-{{ section.id }} {
     padding: {{ ptop }}px {{ pright }}px {{ pbutton }}px {{ pleft }}px;
   }
 {% endstyle %}
 
-<article class="section-paragraph-container {{ section.settings.position }}  section-paragraph-container-{{ section.id }}">
-  {% if section.settings.title != blank %}
-    <h2> {{ section.settings.title }} </h2>
-  {% endif %}
+<article class="section-image-text {{ section.settings.image_position }}  section-image-text-{{ section.id }}">
+  <div class="section-image-text--content {{ section.settings.text_position }}">
+    {% if section.settings.title != blank %}
+      <h2> {{ section.settings.title }} </h2>
+    {% endif %}
+  
+    {% if section.settings.content != blank %}
+      <p> {{ section.settings.content }} </p>
+    {% endif %}
+  
+    {% if section.settings.cta_text != blank %}
+      {% render 'link'
+        style: section.settings.cta_style
+        content: section.settings.cta_text
+        href: section.settings.cta_url
+      %}
+    {% endif %}
+  </div>
 
-  {% if section.settings.content != blank %}
-    <p> {{ section.settings.content }} </p>
-  {% endif %}
-
-  {% if section.settings.cta_text != blank %}
-    {% render 'link'
-      style: cta_style
-      href: section.settings.cta_url
-      content: section.settings.cta_text
+  <div class="section-image-text-img">
+    {% render 'render-image'
+      src: img_src
     %}
-  {% endif %}
+  </div>
 </article>
 
 {% schema %}
 {
-  "name": "Paragraph",
+  "name": "Image with text",
   "tag": "section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Text settings"
+    },
     {
       "type": "text",
       "id": "title",
@@ -75,7 +87,7 @@
     },
     {
       "type": "select",
-      "id": "position",
+      "id": "text_position",
       "label": "Text position",
       "options": [
         {
@@ -91,7 +103,40 @@
           "label": "Right"
         }
       ],
-      "default": "center"
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Image settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
     },
     {
       "type": "range",
@@ -121,7 +166,7 @@
       "step": 1,
       "unit": "px",
       "label": "Padding left",
-      "default": 50
+      "default": 0
     },
     {
       "type": "range",
@@ -131,12 +176,12 @@
       "step": 1,
       "unit": "px",
       "label": "Padding right",
-      "default": 50
+      "default": 0
     }
   ],
   "presets": [
     {
-      "name": "Paragraph"
+      "name": "Image with text"
     }
   ]
 }
