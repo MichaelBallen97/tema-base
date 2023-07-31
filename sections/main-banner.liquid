@@ -5,11 +5,25 @@
     <div class="main-banner--overlay"></div>
   {% endif %}
 
-  {% assign img_src = section.settings.banner_image | image_url %}
+  {% liquid
+    assign img_src = section.settings.banner_image | image_url
+    assign img_src_mobile = section.settings.banner_image_mobile | image_url
+
+    if img_src_mobile == blank
+      assign img_src_mobile = img_src
+    endif
+  %}
+
   {% render 'render-image'
     src: img_src
     tag: "Main banner"
     custom_class: "main-banner--img"
+  %}
+
+  {% render 'render-image'
+    src: img_src_mobile
+    tag: "Main banner"
+    custom_class: "main-banner--img-mobile"
   %}
 
   <section class="main-banner--content {{ section.settings.content_position }}">

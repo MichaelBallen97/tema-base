@@ -2,9 +2,13 @@
   "sections": {
     "main-banner": {
       "type": "main-banner"
+    },
+    "info-cta": {
+      "type": "paragraph-with-cta"
     }
   },
   "order": [
-    "main-banner"
+    "main-banner",
+    "info-cta"
   ]
 }

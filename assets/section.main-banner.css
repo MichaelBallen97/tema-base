@@ -3,7 +3,8 @@
   position: relative;
 }
 
-.banner-container .main-banner--img {
+.banner-container .main-banner--img,
+.banner-container .main-banner--img-mobile {
   width: 100%;
   height: 100%;
   position: relative;
@@ -12,6 +13,10 @@
   right: 0;
   object-fit: cover;
   z-index: 1;
+}
+
+.banner-container .main-banner--img-mobile {
+  display: none;
 }
 
 .banner-container .main-banner--overlay {
@@ -84,4 +89,14 @@
 .banner-container .main-banner--content .main-banner--content-cta {
   margin-top: 10px;
   display: inline-block;
+}
+
+@media (max-width: 769px) {
+  .banner-container .main-banner--img {
+    display: none;
+  }
+
+  .banner-container .main-banner--img-mobile {
+    display: block;
+  }
 }

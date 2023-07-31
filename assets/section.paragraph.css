@@ -1,0 +1,23 @@
+.section-paragraph-container {
+  width: 100%;
+}
+
+.section-paragraph-container h2 {
+  margin-bottom: 16px;
+}
+
+.section-paragraph-container p {
+  margin-bottom: 22px;
+}
+
+.section-paragraph-container.center {
+  text-align: center;
+}
+
+.section-paragraph-container.left {
+  text-align: left;
+}
+
+.section-paragraph-container.right {
+  text-align: right;
+}
