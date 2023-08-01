@@ -1,13 +1,49 @@
 {
   "sections": {
     "main-banner": {
-      "type": "main-banner"
+      "type": "main-banner",
+      "settings": {
+        "overlay": true,
+        "banner_image": "shopify:\/\/shop_images\/stream-water-passing-through-cliffs.jpg",
+        "banner_heading": "Lorem Ipsum",
+        "banner_paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet tempus enim. Suspendisse pellentesque mattis sapien. Fusce venenatis tempus ultricies.",
+        "banner_cta": "Lorem",
+        "style_cta": "primary",
+        "banner_cta_url": "#",
+        "content_position": "center-left"
+      }
     },
     "info-cta": {
-      "type": "paragraph-with-cta"
+      "type": "paragraph-with-cta",
+      "settings": {
+        "title": "Lorem Imsum",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet tempus enim. Suspendisse pellentesque mattis sapien. Fusce venenatis tempus ultricies. Nunc semper urna diam, aliquet ornare metus mattis nec. Pellentesque ante ante, accumsan et dui eget, convallis ornare dolor. Integer a auctor est. Praesent viverra leo et odio eleifend rhoncus sed sit amet magna. Vivamus ultricies congue orci, ut imperdiet erat convallis nec.",
+        "cta_text": "Lorem ipsum",
+        "cta_style": "primary",
+        "cta_url": "#",
+        "position": "center",
+        "padding_top": 0,
+        "padding_button": 0,
+        "padding_left": 50,
+        "padding_right": 50
+      }
     },
     "image-text": {
-      "type": "image-with-text"
+      "type": "image-with-text",
+      "settings": {
+        "title": "Lorem Ipsum",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet tempus enim. Suspendisse pellentesque mattis sapien. Fusce venenatis tempus ultricies. Nunc semper urna diam, aliquet ornare metus mattis nec. Pellentesque ante ante, accumsan et dui eget, convallis ornare dolor. Integer a auctor est.",
+        "cta_text": "Lorem ipsum",
+        "cta_style": "primary",
+        "cta_url": "#",
+        "text_position": "left",
+        "image": "shopify:\/\/shop_images\/prairie-woman-at-sunset.jpg",
+        "image_position": "right",
+        "padding_top": 0,
+        "padding_button": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
     }
   },
   "order": [

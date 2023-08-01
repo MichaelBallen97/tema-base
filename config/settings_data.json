@@ -126,7 +126,72 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "da1e8b45-0dcb-4972-99fa-b332c19a6f1d": {
+            "type": "linklist",
+            "settings": {
+              "title": "Menu title",
+              "linklist": "footer-menu-1"
+            }
+          },
+          "81c786f6-0286-4166-b2ef-51d3914d4772": {
+            "type": "linklist",
+            "settings": {
+              "title": "Menu title",
+              "linklist": "footer"
+            }
+          },
+          "4c5abcac-b26b-4324-96d2-27f9f62ae89b": {
+            "type": "linklist",
+            "settings": {
+              "title": "Menu title",
+              "linklist": "footer-menu-3"
+            }
+          },
+          "dc53dfac-17ee-4b17-b528-a715e8a3d7aa": {
+            "type": "linklist",
+            "settings": {
+              "title": "Menu title",
+              "linklist": "footer-menu-1"
+            }
+          },
+          "8401133a-b824-402c-9170-cc37bc1320bb": {
+            "type": "linklist",
+            "settings": {
+              "title": "Menu title",
+              "linklist": "footer-menu-3"
+            }
+          },
+          "c0a257f4-dd2f-4d17-a1f6-92d5a0ece53b": {
+            "type": "social_media",
+            "settings": {
+              "title": "Follow us",
+              "facebook": true,
+              "instagram": true,
+              "youtube": true,
+              "tiktok": true,
+              "twitter": false,
+              "snapchat": false,
+              "tumblur": false,
+              "vimeo": false
+            }
+          }
+        },
+        "block_order": [
+          "da1e8b45-0dcb-4972-99fa-b332c19a6f1d",
+          "81c786f6-0286-4166-b2ef-51d3914d4772",
+          "4c5abcac-b26b-4324-96d2-27f9f62ae89b",
+          "dc53dfac-17ee-4b17-b528-a715e8a3d7aa",
+          "8401133a-b824-402c-9170-cc37bc1320bb",
+          "c0a257f4-dd2f-4d17-a1f6-92d5a0ece53b"
+        ],
         "settings": {
+          "copy_right": "Copyright Acid 2023",
+          "bg_color": "#ccc",
+          "padding_top": 20,
+          "padding_button": 20,
+          "padding_left": 50,
+          "padding_right": 50
         }
       }
     },
