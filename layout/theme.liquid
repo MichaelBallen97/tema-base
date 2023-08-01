@@ -40,6 +40,7 @@
     {% render 'css-variables' %}
     {{ 'normalize.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'section.footer.css' | asset_url | stylesheet_tag: preload: true }}
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');

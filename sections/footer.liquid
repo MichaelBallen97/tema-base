@@ -1,3 +1,242 @@
+{{ 'snippet.link-list.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign ptop = section.settings.padding_top
+  assign pbutton = section.settings.padding_button
+  assign pleft = section.settings.padding_left
+  assign pright = section.settings.padding_right
+%}
+
+{% style %}
+  footer {
+    background: {{ section.settings.bg_color }};
+    padding: {{ ptop }}px {{ pright }}px {{ pbutton }}px {{ pleft }}px;
+  }
+{% endstyle %}
+
 <footer>
-  Footer
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when "linklist" %}
+        <section class="footer-item">
+          <h3> {{ block.settings.title }} </h3>
+          {% render 'link-list'
+            menu: block.settings.linklist
+          %}
+        </section>
+
+      {% when "logo" %}
+        <section class="footer-item">
+          {% if block.settings.image != blank %}
+            {% assign image_src  = block.settings.image | image_url %}
+              {% render 'render-image' 
+                src: image_src
+                custom_class: "footer-logo"
+              %}
+          {% endif %}
+
+        </section>
+
+      {% when "social_media" %}
+        <section class="footer-item">
+          <h3> {{ block.settings.title }} </h3>
+
+          <section class="icons-container">
+            {% liquid
+              if block.settings.facebook == true
+                render 'icons' type: "facebook"
+               endif
+
+              if block.settings.instagram == true
+                render 'icons' type: "instagram"
+              endif
+   
+              if block.settings.youtube == true
+                render 'icons' type: "youtube"
+              endif
+   
+               if block.settings.tiktok == true
+                 render 'icons' type: "tiktok"
+               endif
+   
+               if block.settings.twitter == true
+                 render 'icons' type: "twitter"
+               endif
+   
+               if block.settings.snapchat == true
+                 render 'icons' type: "snapchat"
+               endif
+   
+               if block.settings.tumblur == true
+                 render 'icons' type: "tumblur"
+               endif
+   
+               if block.settings.vimeo == true
+                 render 'icons' type: "vimeo"
+               endif
+            %}
+          </section>
+        </section>
+      {% else %}
+        
+    {% endcase %}
+  {% endfor %}
+
+  <span class="fotter-copy"> {{ section.settings.copy_right }} </span>
 </footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "footer-container",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "copy_right",
+      "label": "Copyright text",
+      "default": "Copyright Acid 2023"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ccc"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_button",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding button",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding left",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding right",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Linklist",
+      "type": "linklist",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Menu title",
+          "default": "Menu title"
+        },
+        {
+          "type": "link_list",
+          "id": "linklist",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "name": "Logo",
+      "type": "logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Footer image"
+        }
+      ]
+    },
+    {
+      "name": "Social media",
+      "type": "social_media",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Follow us"
+        },
+        {
+          "type": "checkbox",
+          "id": "facebook",
+          "label": "Facebook",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "instagram",
+          "label": "Instagram",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "youtube",
+          "label": "Youtube",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "tiktok",
+          "label": "Tiktok",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "twitter",
+          "label": "Twitter",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "snapchat",
+          "label": "Snapchat",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "tumblur",
+          "label": "Tumblur",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "vimeo",
+          "label": "Vimeo",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}

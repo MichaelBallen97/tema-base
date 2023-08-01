@@ -1,0 +1,9 @@
+.linklist-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linklist-item {
+  margin-bottom: 10px;
+}

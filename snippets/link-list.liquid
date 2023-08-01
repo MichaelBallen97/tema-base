@@ -1,0 +1,9 @@
+<ul class="linklist-list {{ custom_class }}">
+  {% for link in menu.links %}
+    <li class="linklist-item">
+      <a href="{{ link.url }}">
+        {{ link.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
