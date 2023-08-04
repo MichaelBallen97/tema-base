@@ -1,3 +1,127 @@
-<header>
-  
-</header>
+{{ 'section.header.css' | asset_url | stylesheet_tag }}
+{{ 'snippet.mukti-link-list.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign src_image = settings.logo | image_url
+
+  if section.settings.sticky
+    assign shadow_class = "navbar-shadow"
+  endif
+%}
+
+{% style %}
+  {% if section.settings.sticky %}
+    header {
+      position: sticky;
+      top: 0;
+    }
+  {% endif %}
+
+  .navbar {
+    background: {{ section.settings.background }};
+  }
+
+  .submegamenu-list {
+    background: {{ section.settings.background }};
+  }
+{% endstyle %}
+
+<section class="navbar {{ shadow_class }}">
+
+  <section class="navbar-logo">
+    {% render 'render-image'
+      src: src_image
+      width: settings.logo_width
+      custom_class: "navbar-logo--img"
+    %}
+  </section>
+
+  <nav class="navbar-nav">
+    {% render 'multi-link-list'
+      menu: section.settings.main_menu
+      custom_class: section.settings.submenu_style
+    %}
+  </nav>
+
+  <nav class="navbar-second-nav">
+    {% render 'multi-link-list' %}
+  </nav>
+</section>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Sticky header",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "position_logo",
+      "label": "Position logo",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main menu"
+    },
+    {
+      "type": "select",
+      "id": "submenu_style",
+      "label": "Submenu style",
+      "options": [
+        {
+          "value": "style1",
+          "label": "Vertical"
+        },
+        {
+          "value": "style2",
+          "label": "Horizontal"
+        }
+      ],
+      "default": "style1"
+    },
+    {
+      "type": "header",
+      "content": "Styles"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Menu background",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "sticky_background",
+      "label": "Sticky bacground",
+      "default": "#FFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow",
+      "label": "Menu shadow",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,68 @@
+.megamenu-list {
+  display: flex;
+  gap: 10px;
+}
+
+.megamenu-list .megamenu-item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.megamenu-list .megamenu-item .submegamenu-list {
+  display: none;
+}
+
+.megamenu-list .megamenu-item.item-level0:hover .submegamenu-list.list-level1 {
+  display: block;
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  left: 0;
+}
+
+.submegamenu-list .submegamenu-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  gap: 3px;
+}
+
+/* Styles for vertical submenu */
+.megamenu-list.style1 .megamenu-item {
+  position: relative;
+}
+
+.megamenu-list.style1 .megamenu-item.item-level0:hover .submegamenu-list.list-level1 {
+  width: 150%;
+}
+
+.megamenu-list.style1 .submegamenu-item.item-level1:hover .submegamenu-list.list-level2 {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: calc(-100% + 11px);
+}
+
+/* Styles for horizontal submenu */
+.megamenu-list.style2 .megamenu-item.item-level0:hover .submegamenu-list.list-level1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.megamenu-list.style2 .submegamenu-item.item-level1 {
+  flex-direction: column;
+}
+
+.megamenu-list.style2 .submegamenu-item.item-level1 svg {
+  display: none;
+}
+
+.megamenu-list.style2 .submegamenu-list.list-level2 {
+  display: block;
+  position: relative;
+}

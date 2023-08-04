@@ -1,0 +1,45 @@
+{% if menu != blank %}
+  <ul class="megamenu-list list-level0 {{ custom_class }}">
+    {% for link0 in menu.links %}
+      <li class="megamenu-item item-level0">
+        <a href="{{ link0.url }}"> {{ link0.title }} </a>
+  
+        {% if link0.levels > 0 %}
+          {% render 'icons'
+            type: "dropdown-arrow"
+            width: "10"
+            height: "10"
+          %}
+          <ul class="submegamenu-list list-level1">
+            {% for link1 in link0.links %}
+              <li class="submegamenu-item item-level1"> 
+                <a href="{{ link1.url }}"> {{ link1.title }} </a>
+  
+                {% if link1.levels > 0 %}
+                  {% render 'icons'
+                    type: "dropdown-arrow"
+                    width: "10"
+                    height: "10"
+                  %}
+  
+                  <ul class="submegamenu-list list-level2">
+                    {% for link2 in link1.links %}
+                      <li class="submegamenu-item item-level2"> <a href="{{ link2.url }}"> {{ link2.title }} </a> </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <ul class="megamenu-list">
+    <li class="megamenu-item">search</li>
+    <li class="megamenu-item">user</li>
+    <li class="megamenu-item">cart</li>
+  </ul>
+{% endif %}
+

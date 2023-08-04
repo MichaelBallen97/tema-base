@@ -8,6 +8,11 @@ body {
   color: var(--text-color);
 }
 
+body main> section,
+body main > div {
+  margin: var(--space-sections) 0;
+}
+
 main {
   width: 100%;
   max-width: var(--max-page-with);
