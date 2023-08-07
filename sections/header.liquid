@@ -14,6 +14,7 @@
     header {
       position: sticky;
       top: 0;
+      background: {{ section.settings.sticky_background }};
     }
   {% endif %}
 
@@ -26,27 +27,38 @@
   }
 {% endstyle %}
 
-<section class="navbar {{ shadow_class }}">
-
-  <section class="navbar-logo">
-    {% render 'render-image'
-      src: src_image
-      width: settings.logo_width
-      custom_class: "navbar-logo--img"
+<main-menu 
+  class="navbar {{ shadow_class }}"
+  open="false"
+  id-hamburguer="hamburguer-icon"
+>
+  <span id="hamburguer-icon" class="hamburguer-icon">
+    {% render 'icons'
+      type: "menu"
     %}
+  </span>
+
+  <section class="navbar-items">
+    <section class="navbar-logo">
+      {% render 'render-image'
+        src: src_image
+        width: settings.logo_width
+        custom_class: "navbar-logo--img"
+      %}
+    </section>
+  
+    <nav class="navbar-nav">
+      {% render 'multi-link-list'
+        menu: section.settings.main_menu
+        custom_class: section.settings.submenu_style
+      %}
+    </nav>
+  
+    <nav class="navbar-second-nav">
+      {% render 'multi-link-list' %}
+    </nav>
   </section>
-
-  <nav class="navbar-nav">
-    {% render 'multi-link-list'
-      menu: section.settings.main_menu
-      custom_class: section.settings.submenu_style
-    %}
-  </nav>
-
-  <nav class="navbar-second-nav">
-    {% render 'multi-link-list' %}
-  </nav>
-</section>
+</main-menu>
 
 {% schema %}
 {

@@ -66,3 +66,31 @@
   display: block;
   position: relative;
 }
+
+@media (max-width: 769px) {
+  .megamenu-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .megamenu-list.style1 .megamenu-item {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .megamenu-list .megamenu-item.item-level0:hover .submegamenu-list.list-level1 {
+    width: 100%;
+    position: relative;
+  }
+
+  .submegamenu-list .submegamenu-item {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .megamenu-list.style1 .submegamenu-item.item-level1:hover .submegamenu-list.list-level2 {
+    position: relative;
+    width: 100%;
+    right: auto;
+  }
+}
