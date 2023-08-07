@@ -28,6 +28,11 @@
         "padding_right": 50
       }
     },
+    "img-slider": {
+      "type": "images-carousel",
+      "settings": {
+      }
+    },
     "image-text": {
       "type": "image-with-text",
       "settings": {
@@ -49,6 +54,7 @@
   "order": [
     "main-banner",
     "info-cta",
+    "img-slider",
     "image-text"
   ]
 }

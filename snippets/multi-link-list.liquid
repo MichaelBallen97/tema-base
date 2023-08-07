@@ -1,3 +1,15 @@
+{% comment %}
+  Variables:
+  - menu: Linklist Object
+  - custom_class: String
+
+  Use:
+  {% render 'multi-link-list'
+    menu: section.settings.menu
+    custom_class: "main-menu"
+  %} 
+{% endcomment %}
+
 {% if menu != blank %}
   <ul class="megamenu-list list-level0 {{ custom_class }}">
     {% for link0 in menu.links %}

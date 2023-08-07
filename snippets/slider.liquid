@@ -1,0 +1,41 @@
+{% liquid
+  if pagination == blank
+    assign pagination = false
+  endif
+
+  if navigation == blank
+    assign navigation = true
+  endif
+%}
+
+<carousel-slider 
+  class="swiper {{ custom_class }}"
+  loop="{{ loop | default: false }}"
+  direction="{{ direction | default: 'horizontal' }}"
+  sliders-per-page="{{ sliders_per_page | default: 'auto' }}"
+  sliders-per-page-mobile="{{ sliders_per_page_mobile | default: 'auto' }}"
+  autoplay="true"
+  delay="2000"
+>
+  <div class="swiper-wrapper">
+    {% if sliders != blank %}
+      {{ sliders }}
+    {% else %}
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+    {% endif %}
+  </div>
+
+  {% if pagination == true %}
+    <div class="swiper-pagination"></div>
+  {% endif %}
+
+  {% if navigation == true %}
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  {% endif %}
+</carousel-slider>

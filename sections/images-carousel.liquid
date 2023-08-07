@@ -1,0 +1,28 @@
+{% render 'slider' %}
+
+{% schema %}
+{
+  "name": "Images carousel",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Slider"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
