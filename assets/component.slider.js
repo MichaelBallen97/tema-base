@@ -5,12 +5,8 @@ class Slider extends HTMLElement {
     this.loop = this.getAttribute("loop") === 'true' ? true : false;
     this.direction = this.getAttribute("direction");
     this.slidersPerPage = this.getAttribute("sliders-per-page") === 'auto' ? 'auto' : parseInt(this.getAttribute("sliders-per-page"));
-    this.autoplay
+    this.autoplay = this
     this.delay
-  }
-
-  static get observedAttributes() {
-    return [''];
   }
 
   connectedCallback () {
