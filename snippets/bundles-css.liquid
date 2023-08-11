@@ -1,0 +1,5 @@
+{% render 'css-variables' %}
+{{ 'normalize.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'section.footer.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}

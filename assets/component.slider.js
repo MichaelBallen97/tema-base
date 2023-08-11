@@ -4,28 +4,47 @@ class Slider extends HTMLElement {
 
     this.loop = this.getAttribute("loop") === 'true' ? true : false;
     this.direction = this.getAttribute("direction");
-    this.slidersPerPage = this.getAttribute("sliders-per-page") === 'auto' ? 'auto' : parseInt(this.getAttribute("sliders-per-page"));
-    this.autoplay = this
-    this.delay
+    this.slidersPerPageMobile = this.getAttribute("sliders-per-page-mobile") === 'auto' ? 'auto' : parseInt(this.getAttribute("sliders-per-page-mobile"));
+    this.slidersPerPageDesktop = this.getAttribute("sliders-per-page") === 'auto' ? 'auto' : parseInt(this.getAttribute("sliders-per-page"));
+    this.autoplay = this.getAttribute("autoplay") === 'true' ? true : false;
+    this.delay = this.getAttribute("delay") * 1000;
   }
 
   connectedCallback () {
+
     const swiper = new Swiper(this, {
+      slidesPerView: this.slidersPerPageMobile,
+      spaceBetween: 10,
       direction: this.direction,
       loop: this.loop,
-      slidesPerView: this.slidersPerPage,
-    
-      // If we need pagination
+      autoplay: {
+        delay: this.delay,
+        disableOnInteraction: false,
+      },
+
       pagination: {
         el: this.querySelector('.swiper-pagination'),
+        clickable: true,
       },
     
-      // Navigation arrows
       navigation: {
         nextEl: this.querySelector('.swiper-button-next'),
         prevEl: this.querySelector('.swiper-button-prev'),
+      },
+
+      breakpoints: {
+        768: {
+          slidesPerView: this.slidersPerPageDesktop,
+          spaceBetween: 30,
+        }
       }
     });
+
+    swiper.autoplay.stop();
+
+    if(this.autoplay === true) {
+      swiper.autoplay.start();
+    }
   }
 }
 

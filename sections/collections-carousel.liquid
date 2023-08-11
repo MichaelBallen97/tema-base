@@ -1,0 +1,172 @@
+{% comment %} 
+IMPORTANT!!
+We should define slides with this structure:
+
+<div class="swiper-slide">
+  ... childrens here
+</div>
+<div class="swiper-slide">
+  ... childrens here
+</div>
+<div class="swiper-slide">
+  ... childrens here
+</div>
+...
+{% endcomment %}
+
+{{ 'snippet.slider.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'snippet.collection-card.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'section.collections-carousel.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% if section.settings.title != blank %}
+  <h2> {{ section.settings.title }} </h2>
+{% endif %}
+
+{% capture sliders %}
+  {% for block in section.blocks %}
+    {% assign collection = block.settings.collection %}
+    <div class="swiper-slide">
+      {% render 'collection-card'
+        collection: collection
+        section: section
+      %}
+    </div>
+  {% endfor %}
+{% endcapture %}
+
+{% render 'slider'
+  direction: section.settings.direction
+  loop: section.settings.loop
+  sliders_per_page: section.settings.slider_per_page_dk
+  sliders_per_page_mobile: section.settings.slider_per_page_mb
+  autoplay: section.settings.autoplay
+  delay: section.settings.delay
+  pagination: section.settings.pagination
+  sliders: sliders
+%}
+
+{% schema %}
+{
+  "name": "Collections carosuel",
+  "tag": "section",
+  "class": "carousel-container",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Slider settings"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+        {
+          "value": "vertical",
+          "label": "Vertical"
+        },
+        {
+          "value": "horizontal",
+          "label": "Horizontal"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Slider loop",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "slider_per_page_dk",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "Sld",
+      "label": "Sliders per page desktop",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "slider_per_page_mb",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "Sld",
+      "label": "Sliders per page mobile",
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "delay",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "seg",
+      "label": "Autoplay delay",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "pagination",
+      "label": "Pagination",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections carousel"
+    }
+  ]
+}
+{% endschema %}

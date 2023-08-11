@@ -1,0 +1,27 @@
+
+{% liquid
+  assign img_src = collection.featured_image | image_url
+%}
+
+<article class="collection-item">
+  <section class="collection-item--img">
+    <a href="{{ collection.url }}">
+      {% render 'render-image'
+        src: img_src
+      %}
+    </a>
+  </section>
+
+  <section class="collection-item--description">
+    <h3> {{ collection.title }} </h3>
+    {{ collection.description }}
+  </section>
+
+  <section class="collection-item--cta">
+    {% render 'link'
+      style: section.settings.button_style
+      content: section.settings.button_text
+      href: collection.url
+    %}
+  </section>
+</article>

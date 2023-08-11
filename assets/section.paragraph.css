@@ -21,3 +21,9 @@
 .section-paragraph-container.right {
   text-align: right;
 }
+
+@media (max-width: 769px) {
+  .section-paragraph-container {
+    padding: 0 !important;
+  }
+}

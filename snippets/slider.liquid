@@ -1,3 +1,44 @@
+{% comment %}
+  Variables:
+  - loop: true | false
+  - direction: "vertical" | "horizontal"
+  - sliders-per-page: Number
+  - sliders-per-page-mobile: Number
+  - autoplay: true | false
+  - delay: Number
+  - pagination: true | false
+  - navigation: true | false
+  - custom_class: String
+  - sliders : HTML
+
+  Use:
+  {% render 'slider'
+    direction: "horizontal"
+    loop: false
+    sliders_per_page: 4
+    sliders_per_page_mobile: 2
+    autoplay: true
+    delay: 5
+    pagination: true
+    navigation: true
+    sliders: sliders
+  %}
+
+  IMPORTANT!!
+  We should define slides with this structure:
+
+  <div class="swiper-slide">
+    ... childrens here
+  </div>
+  <div class="swiper-slide">
+    ... childrens here
+  </div>
+  <div class="swiper-slide">
+    ... childrens here
+  </div>
+  ...
+{% endcomment %}
+
 {% liquid
   if pagination == blank
     assign pagination = false
@@ -9,13 +50,13 @@
 %}
 
 <carousel-slider 
-  class="swiper {{ custom_class }}"
+  class="swiper {{ custom_class }} {% if pagination == true %}pagination{% endif %}"
   loop="{{ loop | default: false }}"
   direction="{{ direction | default: 'horizontal' }}"
   sliders-per-page="{{ sliders_per_page | default: 'auto' }}"
   sliders-per-page-mobile="{{ sliders_per_page_mobile | default: 'auto' }}"
-  autoplay="true"
-  delay="2000"
+  autoplay="{{ autoplay | default: false }}"
+  delay="{{ delay | default: 5 }}"
 >
   <div class="swiper-wrapper">
     {% if sliders != blank %}

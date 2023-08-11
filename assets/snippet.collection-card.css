@@ -1,0 +1,25 @@
+.collection-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.collection-item .collection-item--description {
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
+.collection-item .collection-item--description h3 {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 769px) {
+  .collection-item .collection-item--description {
+    -webkit-line-clamp: 3;
+  }
+}

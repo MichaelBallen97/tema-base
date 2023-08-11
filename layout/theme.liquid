@@ -37,11 +37,7 @@
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
 
-    {% render 'css-variables' %}
-    {{ 'normalize.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'section.footer.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
+    {% render 'bundles-css' %}
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -60,7 +56,7 @@
 
     {% section 'footer' %}
 
-    {% render 'bundles-all-pages' %}    
+    {% render 'bundles-js' %}    
 
     <script>
       window.shopUrl = '{{ request.origin }}';
