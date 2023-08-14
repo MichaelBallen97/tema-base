@@ -1,0 +1,9 @@
+<section class="{{ custom_class }}">
+  <a href="{{ product.url }}">
+    <span class="regular-price"> {{ product.price | money }} </span>
+    
+    {% if product.compare_at_price > product.price %}
+      <span class="compare-price">- {{ product.compare_at_price | money }} </span>
+    {% endif %}
+  </a>
+</section>

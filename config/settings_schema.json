@@ -344,6 +344,35 @@
     ]
   },
   {
+    "name": "Product card",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "product_card_description",
+        "label": "Show product description",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "product_card_price",
+        "label": "Show product price",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_card_variants_selector",
+        "label": "Enable variants selector",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_card_quick_add",
+        "label": "Enable quick add",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.social-media.name",
     "settings": [
       {

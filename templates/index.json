@@ -33,6 +33,11 @@
       "settings": {
       }
     },
+    "product-slider": {
+      "type": "products-carousel",
+      "settings": {
+      }
+    },
     "img-slider": {
       "type": "images-carousel",
       "settings": {
@@ -54,13 +59,20 @@
         "padding_left": 0,
         "padding_right": 0
       }
+    },
+    "tabs": {
+      "type": "tabs",
+      "settings": {
+      }
     }
   },
   "order": [
     "main-banner",
     "info-cta",
     "collection-slider",
+    "product-slider",
     "img-slider",
-    "image-text"
+    "image-text",
+    "tabs"
   ]
 }

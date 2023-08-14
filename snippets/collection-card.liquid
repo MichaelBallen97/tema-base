@@ -18,10 +18,12 @@
   </section>
 
   <section class="collection-item--cta">
-    {% render 'link'
-      style: section.settings.button_style
-      content: section.settings.button_text
-      href: collection.url
-    %}
+    {% if section.settings.button_text != blank %}
+      {% render 'link'
+        style: section.settings.button_style
+        content: section.settings.button_text
+        href: collection.url
+      %}
+    {% endif %}
   </section>
 </article>

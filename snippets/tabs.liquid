@@ -1,0 +1,28 @@
+<tabs-content
+  class="{{ custom_class }}"
+  toogle="{{ toogle | default: false }}"
+  title-class="{{ title_class }}"
+  content-class="{{ content_class }}"
+>
+  <section class="tabs-titles">
+    {% if titles != blank %}
+      {{ titles }}
+    {% else %}
+      <div class="tab-title">Title 1</div>
+      <div class="tab-title">Title 2</div>
+      <div class="tab-title">Title 3</div>
+      <div class="tab-title">Title 4</div>
+    {% endif %}
+  </section>
+
+  <section class="tabs-content">
+    {% if content != blank %}
+      {{ content }}
+    {% else %}
+      <article class="tab-content">Content tab 1</article>
+      <article class="tab-content">Content tab 2</article>
+      <article class="tab-content">Content tab 3</article>
+      <article class="tab-content">Content tab 4</article>
+    {% endif %}
+  </section>
+</tabs-content>

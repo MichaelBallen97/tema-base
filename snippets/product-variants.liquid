@@ -1,0 +1,18 @@
+{% unless product.has_only_default_variant %}
+  <variants-selector
+    type="product-card"
+  >
+      <input type="hidden" name="variants" value="{{ product.variants | json | escape }}">
+
+      {% for option in product.options %}
+        <label class="product-option-selector">
+          {{ option }}
+          <select name="{{ option }}" class="variant-option">
+            {% for value in product.options_by_name[option].values %}
+              <option value="{{ value }}" >{{ value }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      {% endfor %}
+    </variants-selector>
+{% endunless %}
