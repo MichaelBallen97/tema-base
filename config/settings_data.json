@@ -123,6 +123,13 @@
       "header": {
         "type": "header",
         "settings": {
+          "sticky": true,
+          "position_logo": "left",
+          "main_menu": "main-menu",
+          "submenu_style": "style1",
+          "background": "#FFF",
+          "sticky_background": "#FFF",
+          "shadow": true
         }
       },
       "footer": {
@@ -188,7 +195,7 @@
         ],
         "settings": {
           "copy_right": "Copyright Acid 2023",
-          "bg_color": "#ccc",
+          "bg_color": "#cccccc",
           "padding_top": 20,
           "padding_button": 20,
           "padding_left": 50,
