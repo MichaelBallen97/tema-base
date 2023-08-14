@@ -86,7 +86,7 @@
         "slider_per_page_mb": 2,
         "autoplay": false,
         "delay": 5,
-        "pagination": false
+        "pagination": true
       }
     },
     "product-slider": {
