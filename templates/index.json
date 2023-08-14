@@ -92,8 +92,8 @@
     "product-slider": {
       "type": "products-carousel",
       "settings": {
-        "collection": "",
-        "title": "",
+        "collection": "test-collection",
+        "title": "Best products",
         "button_style": "primary",
         "button_text": "",
         "direction": "horizontal",
