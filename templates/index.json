@@ -154,12 +154,12 @@
         "e15fec44-f928-4955-aabf-fa3abd71ee9e"
       ],
       "settings": {
-        "title": "",
+        "title": "Images",
         "direction": "horizontal",
-        "loop": false,
+        "loop": true,
         "slider_per_page_dk": 4,
         "slider_per_page_mb": 2,
-        "autoplay": false,
+        "autoplay": true,
         "delay": 5,
         "pagination": false
       }
