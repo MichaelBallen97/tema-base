@@ -126,7 +126,7 @@
           "sticky": true,
           "position_logo": "left",
           "main_menu": "main-menu",
-          "submenu_style": "style1",
+          "submenu_style": "style2",
           "background": "#FFF",
           "sticky_background": "#FFF",
           "shadow": true
