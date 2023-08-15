@@ -14,9 +14,7 @@ We should define slides with this structure:
 ...
 {% endcomment %}
 
-{{ 'snippet.slider.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'snippet.product-card.css' | asset_url | stylesheet_tag: preload: true }}
-{{ 'section.collections-carousel.css' | asset_url | stylesheet_tag: preload: true }}
 
 {% if section.settings.title != blank %}
   <h2> {{ section.settings.title }} </h2>

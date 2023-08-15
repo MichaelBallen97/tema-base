@@ -1,0 +1,32 @@
+.main-product--container {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.main-product--container.one_columns {
+  flex-direction: column;
+}
+
+.main-product--container.one_columns .main-product--slider {
+  width: 100%;
+}
+
+.main-product--container.one_columns .main-product--information {
+  width: 100%;
+}
+
+.main-product--container.two_columns .main-product--slider {
+  width: 60%;
+}
+
+.main-product--container.two_columns .main-product--information {
+  width: 40%;
+}
+
+.main-product--container .main-product--information .product-add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}

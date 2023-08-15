@@ -1,0 +1,23 @@
+{{ 'snippet.slider.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% capture slides %}
+  {% for image in product.images %}
+    <div class="swiper-slide">
+      {% assign img_src = image | image_url %}
+      {% render 'render-image'
+        src: img_src
+      %}
+    </div>
+  {% endfor %}
+{% endcapture %}
+
+{% render 'slider'
+  direction: "horizontal"
+  loop: false
+  sliders_per_page: 1
+  sliders_per_page_mobile: 1
+  autoplay: false
+  pagination: false
+  sliders: slides
+  custom_class: custom_class
+%}

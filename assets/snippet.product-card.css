@@ -1,0 +1,12 @@
+.product-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-card .product-card--variants .product-add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

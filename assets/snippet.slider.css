@@ -1,3 +1,8 @@
+.carousel-container h2 {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
 .swiper.pagination {
   padding-bottom: 50px;
 }

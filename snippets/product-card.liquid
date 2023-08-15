@@ -33,21 +33,23 @@
   {% endif %}
 
   {% if settings.product_card_variants_selector %}
-    <form action="/add-cart" class="product-add-form">
-      {% render 'product-variants'
-        product: product
-        type: "product-card"
-      %}
-
-      {% if settings.product_card_quick_add %}
-        {% assign button_text = 'products.product.add_to_cart' | t %}
-
-        {% render 'button'
-          style: "primary"
-          type: "submit"
-          content: button_text
+    <section class="product-card--variants">
+      <form action="/add-cart" class="product-add-form">
+        {% render 'product-variants'
+          product: product
+          type: "product-card"
         %}
-      {% endif %}
-    </form>
+  
+        {% if settings.product_card_quick_add %}
+          {% assign button_text = 'products.product.add_to_cart' | t %}
+  
+          {% render 'button'
+            style: "primary"
+            type: "submit"
+            content: button_text
+          %}
+        {% endif %}
+      </form>
+    </section>
   {% endif %}
 </product-card>

@@ -1,6 +1,6 @@
 {% unless product.has_only_default_variant %}
   <variants-selector
-    type="product-card"
+    type="{{ type }}"
   >
       <input type="hidden" name="variants" value="{{ product.variants | json | escape }}">
 

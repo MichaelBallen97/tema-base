@@ -57,6 +57,9 @@
   sliders-per-page-mobile="{{ sliders_per_page_mobile | default: 'auto' }}"
   autoplay="{{ autoplay | default: false }}"
   delay="{{ delay | default: 5 }}"
+  {% if type != blank %}
+    type="{{ type }}"
+  {% endif %}
 >
   <div class="swiper-wrapper">
     {% if sliders != blank %}

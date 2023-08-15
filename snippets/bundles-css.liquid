@@ -1,5 +1,12 @@
+{% comment %} All Pages {% endcomment %}
 {% render 'css-variables' %}
 {{ 'normalize.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'section.footer.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'snippet.slider.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% comment %} Product Page {% endcomment %}
+{% if template contains 'product' %}
+  {{ 'section.main-product.css' | asset_url | stylesheet_tag: preload: true }}
+{% endif %}

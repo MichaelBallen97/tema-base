@@ -1,0 +1,122 @@
+<main-product 
+  class="main-product--container {{ section.settings.layout }}"
+  selected-variant="{{ product.selected_or_first_available_variant.id }}"
+  enable-add-cart="true"
+>
+  <section class="main-product--slider">
+    {% render 'main-product-slider'
+      product: product
+    %}
+  </section>
+
+  <section class="main-product--information">
+    <form action="/add-cart" class="product-add-form">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when "title" %}
+            <article class="main-product--title">
+              <h1> {{ product.title }} </h1>
+            </article>
+          {% when "description" %}
+            <article class="main-product--description">
+              {{ product.description }}
+            </article>
+          {% when "price" %}
+            {% render 'product-price'
+              custom_class: "main-product--price"
+            %}
+          {% when "variants" %}
+            {% render 'product-variants'
+              type: "product-page"
+            %}
+          {% when "add_to_cart" %}
+            {% assign button_text = 'products.product.add_to_cart' | t %}
+  
+            {% render 'button'
+              style: block.settings.style
+              type: "submit"
+              content: button_text
+            %}
+        {% endcase %}
+      {% endfor %}
+    </form>
+  </section>
+</main-product>
+
+
+{% schema %}
+{
+  "name": "Main product",
+  "tag": "section",
+  "class": "main-product",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "two_columns",
+          "label": "2 Columns"
+        },
+        {
+          "value": "one_columns",
+          "label": "1 Columns"
+        }
+      ],
+      "default": "two_columns"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Product title"
+    },
+    {
+      "type": "description",
+      "name": "Product description"
+    },
+    {
+      "type": "tabs",
+      "name": "Tabs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tabs_title",
+          "label": "Title"
+        }
+      ]
+    },
+    {
+      "type": "variants",
+      "name": "Variants selector"
+    },
+    {
+      "type": "add_to_cart",
+      "name": "Add to cart button",
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Button style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "Price"
+    }
+  ]
+}
+{% endschema %}

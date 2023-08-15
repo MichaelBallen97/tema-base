@@ -1,6 +1,24 @@
 {
   "sections": {
+    "main-product": {
+      "type": "main-product",
+      "settings": {
+      }
+    },
+    "upsell": {
+      "type": "products-carousel",
+      "settings": {
+      }
+    },
+    "faqs": {
+      "type": "tabs",
+      "settings": {
+      }
+    }
   },
   "order": [
+    "main-product",
+    "upsell",
+    "faqs"
   ]
 }

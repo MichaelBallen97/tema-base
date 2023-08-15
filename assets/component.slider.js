@@ -11,7 +11,10 @@ class Slider extends HTMLElement {
   }
 
   connectedCallback () {
+    this.initSlider();
+  }
 
+  initSlider() {
     const swiper = new Swiper(this, {
       slidesPerView: this.slidersPerPageMobile,
       spaceBetween: 10,

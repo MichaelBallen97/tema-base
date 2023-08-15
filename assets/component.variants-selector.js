@@ -2,7 +2,12 @@ class VariantsSelector extends HTMLElement {
   constructor() {
     super();
 
-    this.productCardParent = this.closest("product-card");
+    this.type = this.getAttribute("type");
+    if(this.type === "product-card") {
+      this.productCardParent = this.closest("product-card");
+    } else {
+      this.productCardParent = this.closest("main-product");
+    }
     this.selectors = this.querySelectorAll(".variant-option")
     this.variants = JSON.parse(this.querySelector('[name="variants"]').value)
     this.options = []
