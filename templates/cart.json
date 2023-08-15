@@ -1,6 +1,12 @@
 {
   "sections": {
+    "cart-page": {
+      "type": "cart-page",
+      "settings": {
+      }
+    }
   },
   "order": [
+    "cart-page"
   ]
 }

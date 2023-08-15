@@ -1,0 +1,63 @@
+<h1> {{ page_title }} </h1>
+
+<section class="cart-items">
+  {% render 'cart-items'
+    cart: cart
+  %}
+</section>
+
+<section class="cart-totals">
+  <article>
+    <span> {{ 'sections.cart.headings.discounts' | t }} </span>
+    <span> {{ cart.total_discount | money }} </span>
+  </article>
+
+  <article>
+    <span> {{ 'sections.cart.headings.subtotal' | t }} </span>
+    <span> {{ cart.items_subtotal_price | money }} </span>
+  </article>
+
+  <article>
+    <span> {{ 'sections.cart.headings.total' | t }} </span>
+    <span> {{ cart.total_price | money }} </span>
+  </article>
+
+  {% assign button_text = 'sections.cart.checkout' | t %}
+
+  {% render 'link'
+    style: section.settings.button_style
+    content: button_text
+  %}
+</section>
+
+{% schema %}
+{
+  "name": "Cart",
+  "class": "cart-page",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page title",
+      "default": "Cart"
+    },
+    {
+      "type": "select",
+      "id": "checkout_button_style",
+      "label": "Checkout button style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary"
+    }
+  ]
+}
+{% endschema %}

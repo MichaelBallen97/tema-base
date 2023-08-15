@@ -1,0 +1,30 @@
+{% for item in cart.items %}
+  <div class="cart-items--item">
+    <section class="cart-item--product-info">
+      <div class="cart-item--product-info-img">
+        {% assign img_src = item.product.featured_image | image_url %}
+        <a href="{{ item.product.url }}">
+          {% render 'render-image'
+            src: img_src
+          %}
+        </a>
+      </div>
+
+      <div class="cart-item--product-info-title">
+        <a href="{{ item.product.url }}">
+          <span> {{ item.title }} </span>
+        </a>
+      </div>
+    </section>
+
+    {% render 'product-price'
+      product: item.product
+      custom_class: "cart-item--product-price"
+    %}
+
+    <section class="cart-item--product-actions">
+      <span> input quantity </span>
+      <span> delete </span>
+    </section>
+  </div>
+{% endfor %}

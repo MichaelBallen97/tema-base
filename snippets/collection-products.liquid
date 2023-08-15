@@ -1,0 +1,13 @@
+{% paginate collection.products by products_per_page %}
+  <section class="collection-products--wrapper">
+    {% for product in collection.products %}
+      {% render 'product-card'
+        product: product
+      %}
+    {% endfor %}
+  </section>
+
+  <section class="collection-products--pagination">
+    {{ paginate | default_pagination }}
+  </section>
+{% endpaginate %}

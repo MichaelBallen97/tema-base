@@ -295,6 +295,8 @@
         "product": "Product",
         "price": "Price",
         "total": "Total",
+        "subtotal": "Subtotal",
+        "discounts": "Discounts",
         "quantity": "Quantity",
         "image": "Product image"
       },

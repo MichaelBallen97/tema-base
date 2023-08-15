@@ -17,3 +17,8 @@
   {{ 'section.collection-information.css' | asset_url | stylesheet_tag: preload: true }}
   {{ 'snippet.product-card.css' | asset_url | stylesheet_tag: preload: true }}
 {% endif %}
+
+{% comment %} Cart Page {% endcomment %}
+{% if template contains 'cart' %}
+  {{ 'section.cart-page.css' | asset_url | stylesheet_tag: preload: true }}
+{% endif %}

@@ -53,7 +53,14 @@
   <ul class="megamenu-list">
     <li class="megamenu-item">search</li>
     <li class="megamenu-item">user</li>
-    <li class="megamenu-item">cart</li>
+    <li class="megamenu-item item-cart">
+      <a href="/cart">
+        <span class="item-cart--counter"> {{ cart.item_count }} </span>
+        {% render 'icons'
+          type: "cart"
+        %}
+      </a>
+    </li>
   </ul>
 {% endif %}
 

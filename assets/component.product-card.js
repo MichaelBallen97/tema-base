@@ -71,6 +71,10 @@ class ProductCard extends HTMLElement {
       console.error(`Error al agregar al carrito: ${error.message}`)
     }
   }
+
+  updateCartCounter() {
+    const cartCounter = document.querySelector("main-menu .item-cart--counter");
+  }
 }
 
 customElements.define("product-card", ProductCard);
