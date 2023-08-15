@@ -1,0 +1,21 @@
+.collection-products {
+  display: flex;
+  gap: 10px;
+}
+
+.collection-products--products {
+  display: flex;
+  flex-direction: column;
+  flex-basis: fit-content;
+  gap: 10px;
+}
+
+.collection-products--products .collection-products--wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.collection-products .collection-products--filters {
+  flex-basis: 20%;
+}

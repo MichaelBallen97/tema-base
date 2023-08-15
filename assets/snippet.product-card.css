@@ -2,7 +2,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
+}
+
+.product-card .product-card--image img {
+  width: 100%;
 }
 
 .product-card .product-card--variants .product-add-form {

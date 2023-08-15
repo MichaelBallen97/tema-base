@@ -10,3 +10,10 @@
 {% if template contains 'product' %}
   {{ 'section.main-product.css' | asset_url | stylesheet_tag: preload: true }}
 {% endif %}
+
+{% comment %} Collection Page {% endcomment %}
+{% if template contains 'collection' %}
+  {{ 'section.main-collection.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'section.collection-information.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'snippet.product-card.css' | asset_url | stylesheet_tag: preload: true }}
+{% endif %}

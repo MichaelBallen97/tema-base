@@ -1,6 +1,18 @@
 {
   "sections": {
+    "collection-information": {
+      "type": "collection-information",
+      "settings": {
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {
+      }
+    }
   },
   "order": [
+    "collection-information",
+    "main-collection"
   ]
 }

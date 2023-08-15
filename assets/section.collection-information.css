@@ -1,0 +1,9 @@
+.collection-info .collection-info--container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.collection-info .collection-info--banner img {
+  width: 100%;
+}

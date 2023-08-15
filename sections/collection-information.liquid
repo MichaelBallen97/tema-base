@@ -1,0 +1,60 @@
+<section class="collection-info--container">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'title' %}
+        <article class="collection-info--title">
+          <h1> {{ collection.title }} </h1>
+        </article>
+      {% when 'description' %}
+        <article class="collection-info--description">
+          {{ collection.description }}
+        </article>
+      {% when 'banner' %}
+        <section class="collection-info--banner">
+          {% liquid
+            if block.settings.custom_image != blank
+              assign img_src = block.settings.custom_image | image_url
+            else
+              assign img_src = collection.featured_image | image_url
+            endif
+          %}
+          {% render 'render-image'
+            src: img_src
+          %}
+        </section>
+    {% endcase %}
+  {% endfor %}
+</section>
+
+
+{% schema %}
+{
+  "name": "Collection information",
+  "class": "collection-info",
+  "tag": "section",
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title"
+    },
+    {
+      "type": "description",
+      "name": "Description"
+    },
+    {
+      "type": "banner",
+      "name": "Collection banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
