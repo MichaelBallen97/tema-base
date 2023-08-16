@@ -22,7 +22,7 @@
     "social_pinterest_link": "",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
-    "cart_type": "notification",
+    "cart_type": "minicart",
     "heading_scale": 100,
     "body_scale": 100,
     "spacing_grid_horizontal": 8,
@@ -127,8 +127,8 @@
           "position_logo": "left",
           "main_menu": "main-menu",
           "submenu_style": "style1",
-          "background": "#FFF",
-          "sticky_background": "#FFF",
+          "background": "#ffffff",
+          "sticky_background": "#ffffff",
           "shadow": true
         }
       },
@@ -200,6 +200,11 @@
           "padding_button": 20,
           "padding_left": 50,
           "padding_right": 50
+        }
+      },
+      "minicart": {
+        "type": "minicart",
+        "settings": {
         }
       }
     },
