@@ -11,7 +11,6 @@ TODOS:
 - template Blog
 - template Article
 - template Page
-- template 404
 - template search
 - template cutomer
 
@@ -26,4 +25,4 @@ SOON:
 
 ## License
 
-Copyright (c) 2021-present Acid labs
+Copyright (c) 2023-present Acid labs
