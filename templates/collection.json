@@ -2,12 +2,36 @@
   "sections": {
     "collection-information": {
       "type": "collection-information",
+      "blocks": {
+        "e1e87c73-6a2f-4675-8d9d-2e64e4278a77": {
+          "type": "banner",
+          "settings": {
+          }
+        },
+        "52fffa00-74e5-4b52-93ee-76749dff034a": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "5a6289a0-bc3d-4494-9d6f-b9fbf8fd2475": {
+          "type": "description",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "e1e87c73-6a2f-4675-8d9d-2e64e4278a77",
+        "52fffa00-74e5-4b52-93ee-76749dff034a",
+        "5a6289a0-bc3d-4494-9d6f-b9fbf8fd2475"
+      ],
       "settings": {
       }
     },
     "main-collection": {
       "type": "main-collection",
       "settings": {
+        "products_per_page": 12,
+        "pagination_style": "pagination"
       }
     }
   },
