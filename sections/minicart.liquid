@@ -4,14 +4,19 @@
     {% if settings.cart_type == 'notification' %}
       delay="{{ settings.cart_notification_time }}"
     {% endif %}
+
+    {% if settings.cart_type == 'minicart' %}
+      open="false"
+    {% endif %}
     class="minicart"
   >
     {% case settings.cart_type %}
       {% when 'notification' %}
         <section class="cart-notifications">          
         </section>
-      {% else %}
-        
+      {% when 'minicart' %}
+        <h3> {{ 'sections.cart.title' | t }} </h3>
+        {% render 'cart' %}
     {% endcase %}
   </mini-cart>
 {% endif %}

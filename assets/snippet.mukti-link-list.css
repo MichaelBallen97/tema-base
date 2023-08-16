@@ -10,6 +10,10 @@
   gap: 3px;
 }
 
+.megamenu-list .megamenu-item.item-cart {
+  cursor: pointer;
+}
+
 .megamenu-list .megamenu-item.item-cart a {
   display: flex;
   align-items: center;

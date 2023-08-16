@@ -10,6 +10,12 @@ class Minicart extends HTMLElement {
     return ['selected-variant'];
   }
 
+  connectedCallback() {
+    if(this.typeCart === "minicart") {
+      this.toogleMiniCart();
+    }
+  }
+
   attributeChangedCallback(name, prevValue, newValue) {
     if (name === 'selected-variant') {
       this.selectedVariant = newValue;
@@ -117,6 +123,14 @@ class Minicart extends HTMLElement {
     const cartNewCounter = newHTML.querySelector("main-menu .item-cart--counter");
 
     cartCurrentCounter.innerText = cartNewCounter.innerText;
+  }
+
+  toogleMiniCart() {
+    const buttonToogle = document.querySelector("main-menu .megamenu-item.item-cart");
+
+    buttonToogle.addEventListener("click", ()=> {
+      this.getAttribute("open") === "false" ? this.setAttribute("open", "true") : this.setAttribute("open", "false")
+    })
   }
 }
 

@@ -2,11 +2,12 @@
 {% render 'css-variables' %}
 {{ 'normalize.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'section.footer.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'section.header.css' | asset_url | stylesheet_tag }}
 {{ 'section.minicart.css' | asset_url | stylesheet_tag: preload: true }}
-{{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'snippet.slider.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'snippet.cart.css' | asset_url | stylesheet_tag: preload: true }}
 
 {% comment %} Product Page {% endcomment %}
 {% if template contains 'product' %}
@@ -22,5 +23,4 @@
 
 {% comment %} Cart Page {% endcomment %}
 {% if template contains 'cart' %}
-  {{ 'section.cart-page.css' | asset_url | stylesheet_tag: preload: true }}
 {% endif %}

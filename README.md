@@ -2,7 +2,6 @@
 
 TODOS:
 - Cart pop-up
-- Minicart
 - Update cart API (include cart page)
 - Delete item in cart
 - Component pop-ups
