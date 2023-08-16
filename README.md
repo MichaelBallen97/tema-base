@@ -1,4 +1,7 @@
-# Dawn
+# Shopify Base Theme AcidLabs
+
+Test store: https://base-theme-acid.myshopify.com/
+Password: skewts
 
 TODOS:
 - Cart pop-up
@@ -15,6 +18,7 @@ TODOS:
 - template cutomer
 
 SOON:
+- Variants selector checkbox
 - Input quantity
 - Recommended products API
 - Styles in slider PDP
@@ -22,6 +26,7 @@ SOON:
 - Load more button PLP
 - Dark mode
 - Responsive settings
+- Refactor snippet render-image.liquid
 
 ## License
 
