@@ -7,6 +7,13 @@ TODOS:
 - Component pop-ups
 - Component tabs
 - Component Accordion
+- template Collection list
+- template Blog
+- template Article
+- template Page
+- template 404
+- template search
+- template cutomer
 
 SOON:
 - Input quantity
