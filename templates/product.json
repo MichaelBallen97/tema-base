@@ -2,23 +2,94 @@
   "sections": {
     "main-product": {
       "type": "main-product",
+      "blocks": {
+        "65d732c9-72d5-4ef6-af13-bc3c7d354c8d": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "0b232e19-a4d7-498c-b8c5-8be67044e4f1": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "d834f46b-e25a-46f4-8015-2feeacfa62af": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "b570f20d-bd9d-4d50-8604-79b2b5c7d6d0": {
+          "type": "variants",
+          "settings": {
+          }
+        },
+        "00176e9e-4097-441c-a778-174c3d6358a6": {
+          "type": "add_to_cart",
+          "settings": {
+            "style": "primary"
+          }
+        },
+        "0ed6b5ab-9960-4b5a-b4be-01de96fc211a": {
+          "type": "tabs",
+          "settings": {
+            "tabs_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "65d732c9-72d5-4ef6-af13-bc3c7d354c8d",
+        "0b232e19-a4d7-498c-b8c5-8be67044e4f1",
+        "d834f46b-e25a-46f4-8015-2feeacfa62af",
+        "b570f20d-bd9d-4d50-8604-79b2b5c7d6d0",
+        "00176e9e-4097-441c-a778-174c3d6358a6",
+        "0ed6b5ab-9960-4b5a-b4be-01de96fc211a"
+      ],
       "settings": {
+        "layout": "two_columns"
       }
     },
     "upsell": {
       "type": "products-carousel",
       "settings": {
+        "collection": "test-collection",
+        "title": "More products",
+        "button_style": "primary",
+        "button_text": "",
+        "direction": "horizontal",
+        "loop": false,
+        "slider_per_page_dk": 4,
+        "slider_per_page_mb": 2,
+        "autoplay": false,
+        "delay": 5,
+        "pagination": false
       }
     },
     "faqs": {
       "type": "tabs",
       "settings": {
       }
+    },
+    "579aec00-6016-44ff-9463-fff9d3261b73": {
+      "type": "image-with-text",
+      "settings": {
+        "title": "Title",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus orci vitae hendrerit viverra. Ut fermentum accumsan turpis, eu volutpat ipsum egestas quis. Suspendisse pulvinar lorem vitae ullamcorper iaculis. Integer et pulvinar lacus, et ullamcorper odio. Pellentesque non quam eget risus dictum egestas at et ipsum.",
+        "cta_text": "Learn more",
+        "cta_style": "primary",
+        "cta_url": "",
+        "text_position": "left",
+        "image_position": "right",
+        "padding_top": 0,
+        "padding_button": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
     }
   },
   "order": [
     "main-product",
     "upsell",
-    "faqs"
+    "faqs",
+    "579aec00-6016-44ff-9463-fff9d3261b73"
   ]
 }
