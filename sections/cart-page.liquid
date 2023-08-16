@@ -1,34 +1,40 @@
 <h1> {{ page_title }} </h1>
 
-<section class="cart-items">
-  {% render 'cart-items'
-    cart: cart
-  %}
-</section>
+{% if cart.empty? %}
+  <section class="cart-empty-section">
+    <span> {{ 'sections.cart.empty' | t }} </span>
+  </section>
+{% else %}
+  <section class="cart-items">
+    {% render 'cart-items'
+      cart: cart
+    %}
+  </section>
 
-<section class="cart-totals">
-  <article>
-    <span> {{ 'sections.cart.headings.discounts' | t }} </span>
-    <span> {{ cart.total_discount | money }} </span>
-  </article>
+  <section class="cart-totals">
+    <article>
+      <span> {{ 'sections.cart.headings.discounts' | t }} </span>
+      <span> {{ cart.total_discount | money }} </span>
+    </article>
 
-  <article>
-    <span> {{ 'sections.cart.headings.subtotal' | t }} </span>
-    <span> {{ cart.items_subtotal_price | money }} </span>
-  </article>
+    <article>
+      <span> {{ 'sections.cart.headings.subtotal' | t }} </span>
+      <span> {{ cart.items_subtotal_price | money }} </span>
+    </article>
 
-  <article>
-    <span> {{ 'sections.cart.headings.total' | t }} </span>
-    <span> {{ cart.total_price | money }} </span>
-  </article>
+    <article>
+      <span> {{ 'sections.cart.headings.total' | t }} </span>
+      <span> {{ cart.total_price | money }} </span>
+    </article>
 
-  {% assign button_text = 'sections.cart.checkout' | t %}
+    {% assign button_text = 'sections.cart.checkout' | t %}
 
-  {% render 'link'
-    style: section.settings.button_style
-    content: button_text
-  %}
-</section>
+    {% render 'link'
+      style: section.settings.button_style
+      content: button_text
+    %}
+  </section>
+{% endif %}
 
 {% schema %}
 {

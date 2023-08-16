@@ -10,6 +10,12 @@
   gap: 3px;
 }
 
+.megamenu-list .megamenu-item.item-cart a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .megamenu-list .megamenu-item .submegamenu-list {
   display: none;
 }

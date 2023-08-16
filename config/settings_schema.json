@@ -466,6 +466,20 @@
         ],
         "default": "minicart",
         "label": "t:settings_schema.cart.settings.cart_type.label"
+      },
+      {
+        "type": "header",
+        "content": "Notification settings"
+      },
+      {
+        "type": "range",
+        "id": "cart_notification_time",
+        "min": 3,
+        "max": 10,
+        "step": 1,
+        "unit": "seg",
+        "label": "Time to delete notification",
+        "default": 5
       }
     ]
   }

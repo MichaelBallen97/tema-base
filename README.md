@@ -1,7 +1,6 @@
 # Dawn
 
 TODOS:
-- Cart notification
 - Cart pop-up
 - Minicart
 - Update cart API (include cart page)
@@ -17,6 +16,7 @@ SOON:
 - Infinity scroll PLP
 - Load more button PLP
 - Dark mode
+- Responsive settings
 
 ## License
 

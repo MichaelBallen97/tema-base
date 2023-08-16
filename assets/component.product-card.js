@@ -4,6 +4,7 @@ class ProductCard extends HTMLElement {
     this.variantId = this.getAttribute("selected-variant")
     this.enableAddCart = this.getAttribute("enable-add-cart") === "true" ? true : false
     this.formAddCart = this.querySelector(".product-add-form")
+    this.minicar = document.querySelector("mini-cart")
   }
 
   static get observedAttributes() {
@@ -36,44 +37,14 @@ class ProductCard extends HTMLElement {
   }
 
   addToCart() {
-    this.formAddCart.addEventListener("submit", (e)=> {
+    this.formAddCart.addEventListener("submit", async (e)=> {
       e.preventDefault();
-      this.getDataCart(this.variantId, 1);
+      this.updateMinicart();
     })
   }
 
-  async getDataCart(variantId, quantity, section = undefined) {
-    let formData = {
-      items:[
-        {
-          id: variantId,
-          quantity: quantity
-        }
-      ]
-    }
-
-    if (section) {
-      formData.sections = section;
-    }
-
-    try {
-      const response = await fetch("/cart/add.js", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      const result = await response.json();
-      return result;
-    } catch (error) {
-      console.error(`Error al agregar al carrito: ${error.message}`)
-    }
-  }
-
-  updateCartCounter() {
-    const cartCounter = document.querySelector("main-menu .item-cart--counter");
+  updateMinicart() {
+    this.minicar.setAttribute("selected-variant", this.variantId);
   }
 }
 

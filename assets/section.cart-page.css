@@ -36,6 +36,12 @@
   margin-left: auto;
 }
 
+.cart-empty-section {
+  height: 50vh;
+  text-align: center;
+  margin-top: 16px;
+}
+
 @media (max-width: 769px) {
   .cart-items--item {
     flex-wrap: wrap;

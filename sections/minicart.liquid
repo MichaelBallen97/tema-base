@@ -1,0 +1,25 @@
+{% if settings.cart_type != "page" and template != 'cart' %}
+  <mini-cart
+    cart-type="{{ settings.cart_type }}"
+    {% if settings.cart_type == 'notification' %}
+      delay="{{ settings.cart_notification_time }}"
+    {% endif %}
+    class="minicart"
+  >
+    {% case settings.cart_type %}
+      {% when 'notification' %}
+        <section class="cart-notifications">          
+        </section>
+      {% else %}
+        
+    {% endcase %}
+  </mini-cart>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Minicart",
+  "class": "minicart-container",
+  "tag": "section"
+}
+{% endschema %}

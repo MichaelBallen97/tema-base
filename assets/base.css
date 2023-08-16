@@ -13,11 +13,17 @@ body main > div {
   margin: var(--space-sections) 0;
 }
 
+body main> section:nth-child(1),
+body main > div:nth-child(1) {
+  margin: 0;
+}
+
 main {
   width: 100%;
   max-width: var(--max-page-with);
   margin: auto;
   padding: 0 var(--page--padding);
+  position: relative;
 }
 
 h1 {
