@@ -66,7 +66,44 @@
     },
     "faqs": {
       "type": "tabs",
+      "blocks": {
+        "ffa860a2-2d04-4a43-9b75-92ab8c38f81a": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Product info",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "459f201f-cdaa-4cf5-a082-2a16ac3603b7": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab title",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "f6ce0633-f5f5-4745-b499-69ad8fd4f592": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab title",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "b295ae3f-ea48-4749-a14a-c1fa2b05923a": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab title",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla."
+          }
+        }
+      },
+      "block_order": [
+        "ffa860a2-2d04-4a43-9b75-92ab8c38f81a",
+        "459f201f-cdaa-4cf5-a082-2a16ac3603b7",
+        "f6ce0633-f5f5-4745-b499-69ad8fd4f592",
+        "b295ae3f-ea48-4749-a14a-c1fa2b05923a"
+      ],
       "settings": {
+        "title": ""
       }
     },
     "579aec00-6016-44ff-9463-fff9d3261b73": {
@@ -84,12 +121,48 @@
         "padding_left": 0,
         "padding_right": 0
       }
+    },
+    "71072c1b-08ea-484c-a4f6-7996cfe173b2": {
+      "type": "accordion",
+      "blocks": {
+        "f528f6ea-ba84-4494-b303-d308d404ce1e": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion 1",
+            "accordion_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "24bad5d6-4bb7-4ba6-967c-cc86ddcb4bae": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion 1",
+            "accordion_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "7fe96739-0e66-41fd-836a-fa754f1e7041": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion 1",
+            "accordion_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        }
+      },
+      "block_order": [
+        "f528f6ea-ba84-4494-b303-d308d404ce1e",
+        "24bad5d6-4bb7-4ba6-967c-cc86ddcb4bae",
+        "7fe96739-0e66-41fd-836a-fa754f1e7041"
+      ],
+      "settings": {
+        "title": "FAQ",
+        "toggle": true
+      }
     }
   },
   "order": [
     "main-product",
     "upsell",
     "faqs",
-    "579aec00-6016-44ff-9463-fff9d3261b73"
+    "579aec00-6016-44ff-9463-fff9d3261b73",
+    "71072c1b-08ea-484c-a4f6-7996cfe173b2"
   ]
 }
