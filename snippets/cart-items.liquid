@@ -4,9 +4,7 @@
       <div class="cart-item--product-info-img">
         {% assign img_src = item.product.featured_image | image_url %}
         <a href="{{ item.product.url }}">
-          {% render 'render-image'
-            src: img_src
-          %}
+          {% render 'render-image', src: img_src %}
         </a>
       </div>
 
@@ -17,14 +15,11 @@
       </div>
     </section>
 
-    {% render 'product-price'
-      product: item.product
-      custom_class: "cart-item--product-price"
-    %}
+    {% render 'product-price', product: item.product, custom_class: 'cart-item--product-price' %}
 
     <section class="cart-item--product-actions">
       <span> input quantity </span>
-      <span> delete </span>
+      <span class="delete-item" id="{{ item.key }}"> {% render 'icons', type: 'tash' %} </span>
     </section>
   </div>
 {% endfor %}

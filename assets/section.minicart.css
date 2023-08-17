@@ -73,3 +73,18 @@ body main .minicart-container {
   -webkit-box-shadow: -3px 1px 7px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: -3px 1px 7px 0px rgba(0,0,0,0.75);
 }
+
+.minicart[cart-type="minicart"] .minicart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.minicart[cart-type="minicart"] .minicart-header .minicart-clear-all {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.minicart[cart-type="minicart"] .minicart-header .minicart-clear-all:hover {
+  color: red;
+}

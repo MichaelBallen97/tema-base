@@ -5,8 +5,6 @@ Password: skewts
 
 TODOS:
 - Cart pop-up
-- Update cart API (include cart page)
-- Delete item in cart
 - Component pop-ups
 - Component tabs
 - Component Accordion

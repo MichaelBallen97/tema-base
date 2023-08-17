@@ -19,6 +19,16 @@
   gap: 10px;
 }
 
+.cart-items--item .cart-item--product-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-items--item .cart-item--product-actions .delete-item {
+  cursor: pointer;
+}
+
 .cart-items--item .cart-item--product-info .cart-item--product-info-img {
   width: 100px;
 }

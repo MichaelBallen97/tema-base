@@ -1,4 +1,4 @@
-{% if settings.cart_type != "page" and template != 'cart' %}
+{% if settings.cart_type != 'page' and template != 'cart' %}
   <mini-cart
     cart-type="{{ settings.cart_type }}"
     {% if settings.cart_type == 'notification' %}
@@ -12,10 +12,12 @@
   >
     {% case settings.cart_type %}
       {% when 'notification' %}
-        <section class="cart-notifications">          
-        </section>
+        <section class="cart-notifications"></section>
       {% when 'minicart' %}
-        <h3> {{ 'sections.cart.title' | t }} </h3>
+        <section class="minicart-header">
+          <h3>{{ 'sections.cart.title' | t }}</h3>
+          <span class="minicart-clear-all"> {{ 'sections.cart.remove_all' | t }} </span>
+        </section>
         {% render 'cart' %}
     {% endcase %}
   </mini-cart>

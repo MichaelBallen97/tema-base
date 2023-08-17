@@ -4,9 +4,7 @@
   </section>
 {% else %}
   <section class="cart-items">
-    {% render 'cart-items'
-      cart: cart
-    %}
+    {% render 'cart-items', cart: cart %}
   </section>
 
   <section class="cart-totals">
@@ -27,9 +25,6 @@
 
     {% assign button_text = 'sections.cart.checkout' | t %}
 
-    {% render 'link'
-      style: section.settings.button_style
-      content: button_text
-    %}
+    {% render 'link', style: section.settings.button_style, content: button_text, href: '/checkout' %}
   </section>
 {% endif %}

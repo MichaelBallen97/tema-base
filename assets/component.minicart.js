@@ -4,15 +4,17 @@ class Minicart extends HTMLElement {
     this.typeCart = this.getAttribute("cart-type")
     this.delay = this.getAttribute("delay");
     this.selectedVariant = this.getAttribute("selected-variant");
+    this.open = this.getAttribute("open") === "true" ? true : false
   }
 
   static get observedAttributes() {
-    return ['selected-variant'];
+    return ['selected-variant', 'open'];
   }
 
   connectedCallback() {
     if(this.typeCart === "minicart") {
       this.toogleMiniCart();
+      this.cartActions();
     }
   }
 
@@ -21,20 +23,29 @@ class Minicart extends HTMLElement {
       this.selectedVariant = newValue;
       this.addItem();
     }
-  }
 
-  async addItem() {
-    const data = await this.addCart(this.selectedVariant, 1, "header");
-    const {header} = data.sections;
-    const {items} = data
-    this.updateCartCounter(header)
-
-    if (this.typeCart === 'notification') {
-      this.updateNotificationCart(items);
+    if (name === 'open') {
+      this.open = newValue
     }
   }
 
-  async updateNotificationCart (items) {
+  async addItem() {
+    const data = await this.addCart(this.selectedVariant, 1, "header,minicart");
+    const {header} = data.sections;
+    this.updateCartCounter(header);
+    
+    if (this.typeCart === 'notification') {
+      const {items} = data
+      this.updateNotificationCart(items);
+    }
+
+    if (this.typeCart === 'minicart') {
+      const {minicart} = data.sections;
+      this.updateMinicart(minicart)
+    }
+  }
+
+  async updateNotificationCart(items) {
     const notificationsParent = document.querySelector(".cart-notifications");
     const item = items[0];
     const delayRemove = parseInt(this.delay)*1000;
@@ -73,6 +84,21 @@ class Minicart extends HTMLElement {
       }, delayRemove);
 
     })
+  }
+
+  updateMinicart(htmlString) {
+    const parser = new DOMParser
+    const newHTML = parser.parseFromString(htmlString, 'text/html');
+
+    const currentMiniCart = document.querySelector("mini-cart");
+    const newMiniCart = newHTML.querySelector("mini-cart");
+
+    currentMiniCart.innerHTML = newMiniCart.innerHTML;
+    this.cartActions();
+
+    if (this.open === "false") {
+      this.setAttribute("open", "true");
+    }
   }
 
   async getCart() {
@@ -115,6 +141,57 @@ class Minicart extends HTMLElement {
     }
   }
 
+  async updateCart(id, quantity, section = undefined) {
+
+    let formData = {
+      updates: {
+        [id]: quantity
+      }
+    }
+
+    if (section) {
+      formData.sections = section;
+    }
+
+    try {
+      const response = await fetch("cart/update.js", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error(`Error al actualizar al carrito: ${error.message}`)
+    }
+  }
+
+  async clearCart(section = undefined) {
+    let formData = {}
+
+    if (section) {
+      formData.sections = section;
+    }
+
+    try {
+      const response = await fetch("/cart/clear.js", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error(`Error al eliminar items: ${error.message}`)
+    }
+  }
+
   updateCartCounter(htmlString) {
     const parser = new DOMParser
     const newHTML = parser.parseFromString(htmlString, 'text/html');
@@ -131,6 +208,48 @@ class Minicart extends HTMLElement {
     buttonToogle.addEventListener("click", ()=> {
       this.getAttribute("open") === "false" ? this.setAttribute("open", "true") : this.setAttribute("open", "false")
     })
+  }
+
+  cartActions() {
+    this.deleteItem();
+    this.updateQuantity();
+    this.deleteAllItems();
+  }
+
+  deleteItem() {
+    const deleteActions = this.querySelectorAll(".delete-item");
+
+    if (deleteActions.length > 0) {
+      deleteActions.forEach(deleteButton => {
+        deleteButton.addEventListener("click", async ()=> {
+          const data = await this.updateCart(deleteButton.id, 0, "minicart,header");
+          const {header} = data.sections;
+          const {minicart} = data.sections;
+
+          this.updateCartCounter(header);
+          this.updateMinicart(minicart);
+        })
+      });
+    }
+  }
+
+  updateQuantity() {
+    console.log("TODO: update quantity")
+  }
+
+  deleteAllItems() {
+    const buttonDelete = this.querySelector(".minicart-clear-all");
+
+    if(buttonDelete != null) {
+      buttonDelete.addEventListener("click", async ()=> {
+        const data = await this.clearCart("minicart,header");
+        const {header} = data.sections;
+        const {minicart} = data.sections;
+
+        this.updateCartCounter(header);
+        this.updateMinicart(minicart);
+      })
+    }
   }
 }
 
