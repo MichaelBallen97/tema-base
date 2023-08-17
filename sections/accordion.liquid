@@ -1,0 +1,57 @@
+{{ 'snippet.accordion-item.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'section.accordion.css' | asset_url | stylesheet_tag: preload: true }}
+
+<accordion-content
+  class="accordions"
+  toggle="{{ section.settings.toggle }}"
+>
+  {% for block in section.blocks %}
+    {% render 'accordion-item', title: block.settings.accordion_title, content: block.settings.accordion_content %}
+  {% endfor %}
+</accordion-content>
+
+{% schema %}
+{
+  "name": "Accordion",
+  "class": "accordion-container",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle",
+      "label": "Toggle",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "settings": [
+        {
+          "type": "text",
+          "id": "accordion_title",
+          "label": "Accordion title",
+          "default": "Accordion 1"
+        },
+        {
+          "type": "textarea",
+          "id": "accordion_content",
+          "label": "Accordion content",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion"
+    }
+  ]
+}
+{% endschema %}

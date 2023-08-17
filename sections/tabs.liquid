@@ -1,1 +1,57 @@
-{% render 'tabs' %}
+{% if section.settings.title %}
+  <h2>{{ section.settings.title }}</h2>
+{% endif %}
+
+{% capture titles %}
+  {% for block in section.blocks %}
+    <div class="tab-title"> {{ block.settings.tab_title }} </div>
+  {% endfor %}
+{% endcapture %}
+
+{% capture contents %}
+  {% for block in section.blocks %}
+    <div class="tab-content"> {{ block.settings.tab_content }} </div>
+  {% endfor %}
+{% endcapture %}
+
+{% render 'tabs', title_class: 'tab-title', content_class: 'tab-content', titles: titles, content: contents %}
+
+{% schema %}
+{
+  "name": "Tabs",
+  "class": "tabs-container",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab title",
+          "default": "Tab title"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_content",
+          "label": "Tab content",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabs"
+    }
+  ]
+}
+{% endschema %}

@@ -8,7 +8,6 @@ TODOS:
 - Component pop-ups
 - Component tabs
 - Component Accordion
-- template Collection list
 - template Blog
 - template Article
 - template Page
@@ -25,6 +24,8 @@ SOON:
 - Dark mode
 - Responsive settings
 - Refactor snippet render-image.liquid
+- Upsell in minicart
+- Progress bar in minicart
 
 ## License
 

@@ -1,0 +1,66 @@
+{{ 'snippet.collection-card.css' | asset_url | stylesheet_tag: preload: true }}
+
+{{ template }}
+{% if section.settings.title != blank %}
+  <h1>{{ section.settings.title }}</h1>
+{% endif %}
+
+<section class="collection-list-container">
+  {% paginate collections by section.settings.collections_per_page %}
+    <section class="collection-list--wrapper">
+      {% for collection in collections %}
+        {% render 'collection-card', collection: collection %}
+      {% endfor %}
+    </section>
+
+    <section class="collection-products--pagination">
+      {{ paginate | default_pagination }}
+    </section>
+  {% endpaginate %}
+</section>
+
+{% schema %}
+{
+  "name": "Collecrtion-list",
+  "class": "collection-list",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page title",
+      "default": "Collection List"
+    },
+    {
+      "type": "range",
+      "id": "collections_per_page",
+      "min": 9,
+      "max": 36,
+      "step": 3,
+      "unit": "pd",
+      "label": "collections per page",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "pagination_style",
+      "label": "Pagination type",
+      "options": [
+        {
+          "value": "pagination",
+          "label": "Pagination"
+        },
+        {
+          "value": "infinity_scroll",
+          "label": "Infinity scroll"
+        },
+        {
+          "value": "load_more",
+          "label": "Load more button"
+        }
+      ],
+      "default": "pagination"
+    }
+  ]
+}
+{% endschema %}

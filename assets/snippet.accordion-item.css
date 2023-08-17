@@ -1,0 +1,21 @@
+.accordion-item .accordion-title {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.accordion-item .accordion-title .accordion-arrow {
+  transition: transform .3s;
+}
+
+.accordion-item[open] .accordion-title .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.accordion-item .accordion-content {
+  padding: 10px;
+  transition: all .3s ease-in-out;
+}

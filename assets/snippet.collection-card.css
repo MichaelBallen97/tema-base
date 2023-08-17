@@ -6,6 +6,10 @@
   padding-bottom: 10px;
 }
 
+.collection-item .collection-item--img img {
+  width: 100%;
+}
+
 .collection-item .collection-item--description {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;

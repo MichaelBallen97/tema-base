@@ -185,6 +185,11 @@
       "type": "tabs",
       "settings": {
       }
+    },
+    "accordion": {
+      "type": "accordion",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -194,6 +199,7 @@
     "product-slider",
     "img-slider",
     "image-text",
-    "tabs"
+    "tabs",
+    "accordion"
   ]
 }
