@@ -1,0 +1,51 @@
+.popup {
+  display: none;
+}
+
+.popup[open="true"] {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+
+.popup[open="true"] .popup-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.popup[open="true"] .popup-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 11;
+  width: 100%;
+  max-width: var(--pop-up-width);
+  background: var(--pop-up-background);
+}
+
+.popup[open="true"] .popup-container .popup-icon-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.popup[open="true"] .popup-container .pop-up-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

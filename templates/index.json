@@ -190,6 +190,11 @@
       "type": "accordion",
       "settings": {
       }
+    },
+    "pop-up": {
+      "type": "pop-up",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -200,6 +205,7 @@
     "img-slider",
     "image-text",
     "tabs",
-    "accordion"
+    "accordion",
+    "pop-up"
   ]
 }

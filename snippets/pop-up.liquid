@@ -1,0 +1,32 @@
+{{ 'snippet.popup.css' | asset_url | stylesheet_tag: preload: true }}
+
+<pop-up
+  class="popup {{ custom_class }}"
+  {% if time_to_show != blank %}
+    time="{{ time_to_show }}"
+  {% endif %}
+  open="false"
+>
+  <div class="popup-container">
+    <span class="popup-icon-close">
+      {% render 'icons', type: 'close' %}
+    </span>
+
+    <article class="pop-up-content">
+      <h2 class="pop-up-content--title">{{ title }}</h2>
+
+      <p class="pop-up-content--text">{{ content }}</p>
+
+      {% if button_text != blank %}
+        {% render 'link', style: button_style, href: button_url, content: button_text %}
+      {% endif %}
+    </article>
+
+    {% case type %}
+      {% when 'newsletter' %}
+        {% render 'newsletter-form' %}
+    {% endcase %}
+  </div>
+
+  <div class="popup-overlay"></div>
+</pop-up>

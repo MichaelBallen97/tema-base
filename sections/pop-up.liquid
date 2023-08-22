@@ -1,0 +1,88 @@
+{{ 'section.popup.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% render 'pop-up',
+  title: section.settings.title,
+  content: section.settings.content,
+  button_style: section.settings.button_style,
+  button_text: section.settings.button_text,
+  button_content: section.settings.button_content,
+  button_url: section.settings.button_url,
+  time_to_show: section.settings.time,
+  type: section.settings.type
+%}
+
+{% schema %}
+{
+  "name": "Pop up",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "time",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "seg",
+      "label": "Time for show popup",
+      "default": 5
+    },
+    {
+      "type": "select",
+      "id": "type",
+      "label": "Popup type",
+      "options": [
+        {
+          "value": "newsletter",
+          "label": "Newsletter"
+        },
+        {
+          "value": "content",
+          "label": "Content"
+        }
+      ],
+      "default": "content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Pop-up title"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Pop-up content"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Popup"
+    }
+  ]
+}
+{% endschema %}

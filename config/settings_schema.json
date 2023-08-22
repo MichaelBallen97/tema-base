@@ -330,7 +330,23 @@
     "settings": [
       {
         "type": "header",
-        "content": "TODO Setings popups"
+        "content": "Popup settings"
+      },
+      {
+        "type": "range",
+        "id": "popup-with",
+        "min": 300,
+        "max": 1000,
+        "step": 50,
+        "unit": "px",
+        "label": "Popup width",
+        "default": 500
+      },
+      {
+        "type": "color",
+        "id": "popup-background",
+        "label": "Popup background",
+        "default": "#CCCCCC"
       }
     ]
   },

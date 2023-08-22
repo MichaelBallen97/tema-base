@@ -6,8 +6,6 @@ Password: skewts
 TODOS:
 - Cart pop-up
 - Component pop-ups
-- Component tabs
-- Component Accordion
 - template Blog
 - template Article
 - template Page
@@ -26,6 +24,7 @@ SOON:
 - Refactor snippet render-image.liquid
 - Upsell in minicart
 - Progress bar in minicart
+- Performance
 
 ## License
 
