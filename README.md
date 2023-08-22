@@ -10,7 +10,6 @@ TODOS:
 - template search
 
 SOON:
-- Refactor snippet render-image.liquid
 - Variants selector checkbox
 - Input quantity
 - Recommended products API
