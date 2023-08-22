@@ -284,7 +284,15 @@
     },
     "pop-up": {
       "type": "pop-up",
+      "disabled": true,
       "settings": {
+        "time": 5,
+        "type": "content",
+        "title": "",
+        "content": "",
+        "button_style": "primary",
+        "button_text": "",
+        "button_url": ""
       }
     }
   },
