@@ -18,6 +18,7 @@ body main .minicart-container {
 /* CART NOTIFICATION */
 .minicart[cart-type="notification"] {
   justify-content: flex-end;
+  height: 0;
 }
 
 .minicart[cart-type="notification"] .cart-notifications {

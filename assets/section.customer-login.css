@@ -1,0 +1,15 @@
+.login-container[mode="login"] .reset-form {
+  display: none;
+}
+
+.login-container[mode="recovery"] .login-form {
+  display: none;
+}
+
+.login-form .password .password-recovery {
+  cursor: pointer;
+}
+
+.reset-form .show-login-form {
+  cursor: pointer;
+}

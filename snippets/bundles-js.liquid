@@ -13,3 +13,8 @@
 {% if template contains 'product' %}
   <script src="{{ 'component.main-product.js' | asset_url }}" defer></script>
 {% endif %}
+
+{% comment %} Customer Pages {% endcomment %}
+{% if template contains 'customers' %}
+  <script src="{{ 'component.login-form.js' | asset_url }}" defer></script>
+{% endif %}

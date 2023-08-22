@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-.megamenu-list .megamenu-item.item-cart a {
+.megamenu-list .megamenu-item a {
   display: flex;
   align-items: center;
   gap: 5px;

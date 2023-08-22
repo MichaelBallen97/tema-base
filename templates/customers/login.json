@@ -1,6 +1,11 @@
 {
   "sections": {
+    "login": {
+      "type": "customer-login",
+      "settings": {}
+    }
   },
   "order": [
+    "login"
   ]
 }

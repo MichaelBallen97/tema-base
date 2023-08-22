@@ -1,0 +1,56 @@
+{{ 'section.customer-login.css' | asset_url | stylesheet_tag }}
+
+<login-form
+  class="login-container"
+  mode="login"
+>
+  <section class="login-form">
+    {% form 'customer_login' %}
+      {{ form.errors | default_errors }}
+
+      <div class="email">
+        <label for="email"> {{ 'customer.login_page.email' | t }} </label>
+        <input type="email" name="customer[email]">
+      </div>
+
+      <div class="password">
+        <label for="password">{{ 'customer.login_page.password' | t }}</label>
+        <input type="password" name="customer[password]">
+
+        <span class="password-recovery"> {{ 'customer.login_page.forgot_password' | t }} </span>
+      </div>
+
+      <div class="submit">
+        {% assign button_text = 'customer.login_page.sign_in' | t %}
+        {% render 'button', style: 'primary', type: 'submit', content: button_text %}
+      </div>
+    {% endform %}
+
+    <a href="/account/register">{{ 'customer.login_page.create_account' | t }}</a>
+  </section>
+
+  <section class="reset-form">
+    {% form 'recover_customer_password' %}
+      {{ form.errors | default_errors }}
+
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="email" name="email">
+      </div>
+
+      <div class="submit">
+        <span class="show-login-form"> Cancel </span>
+        <input type="submit" value="Submit">
+      </div>
+    {% endform %}
+  </section>
+</login-form>
+
+{% schema %}
+{
+  "name": "Login form",
+  "class": "login-section",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

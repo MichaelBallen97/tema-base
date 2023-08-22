@@ -4,15 +4,13 @@ Test store: https://base-theme-acid.myshopify.com/
 Password: skewts
 
 TODOS:
-- Cart pop-up
-- Component pop-ups
 - template Blog
 - template Article
 - template Page
 - template search
-- template cutomer
 
 SOON:
+- Refactor snippet render-image.liquid
 - Variants selector checkbox
 - Input quantity
 - Recommended products API
@@ -20,11 +18,11 @@ SOON:
 - Infinity scroll PLP
 - Load more button PLP
 - Dark mode
+- Performance
 - Responsive settings
-- Refactor snippet render-image.liquid
 - Upsell in minicart
 - Progress bar in minicart
-- Performance
+- predictive search
 
 ## License
 

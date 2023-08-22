@@ -17,28 +17,22 @@
     {% for link0 in menu.links %}
       <li class="megamenu-item item-level0">
         <a href="{{ link0.url }}"> {{ link0.title }} </a>
-  
+
         {% if link0.levels > 0 %}
-          {% render 'icons'
-            type: "dropdown-arrow"
-            width: "10"
-            height: "10"
-          %}
+          {% render 'icons', type: 'dropdown-arrow', width: '10', height: '10' %}
           <ul class="submegamenu-list list-level1">
             {% for link1 in link0.links %}
-              <li class="submegamenu-item item-level1"> 
+              <li class="submegamenu-item item-level1">
                 <a href="{{ link1.url }}"> {{ link1.title }} </a>
-  
+
                 {% if link1.levels > 0 %}
-                  {% render 'icons'
-                    type: "dropdown-arrow"
-                    width: "10"
-                    height: "10"
-                  %}
-  
+                  {% render 'icons', type: 'dropdown-arrow', width: '10', height: '10' %}
+
                   <ul class="submegamenu-list list-level2">
                     {% for link2 in link1.links %}
-                      <li class="submegamenu-item item-level2"> <a href="{{ link2.url }}"> {{ link2.title }} </a> </li>
+                      <li class="submegamenu-item item-level2">
+                        <a href="{{ link2.url }}"> {{ link2.title }} </a>
+                      </li>
                     {% endfor %}
                   </ul>
                 {% endif %}
@@ -52,22 +46,19 @@
 {% else %}
   <ul class="megamenu-list">
     <li class="megamenu-item">search</li>
-    <li class="megamenu-item">user</li>
+    <li class="megamenu-item">
+      <a href="/account/login"> {% render 'icons', type: 'user' %} </a>
+    </li>
     <li class="megamenu-item item-cart">
       {% if settings.cart_type == 'minicart' %}
         <span class="item-cart--counter"> {{ cart.item_count }} </span>
-        {% render 'icons'
-          type: "cart"
-        %}
+        {% render 'icons', type: 'cart' %}
       {% else %}
         <a href="/cart">
           <span class="item-cart--counter"> {{ cart.item_count }} </span>
-          {% render 'icons'
-            type: "cart"
-          %}
+          {% render 'icons', type: 'cart' %}
         </a>
       {% endif %}
     </li>
   </ul>
 {% endif %}
-
