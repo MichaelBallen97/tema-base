@@ -1,27 +1,24 @@
-
 {% liquid
-  assign img_src = collection.featured_image | image_url
+  assign img_src = collection.featured_image
 %}
 
 <article class="collection-item">
   <section class="collection-item--img">
     <a href="{{ collection.url }}">
-      {% render 'render-image'
-        src: img_src
-      %}
+      {% render 'render-image', src: img_src, lazy: true %}
     </a>
   </section>
 
   <section class="collection-item--description">
-    <h3> {{ collection.title }} </h3>
+    <h3>{{ collection.title }}</h3>
     {{ collection.description }}
   </section>
 
   <section class="collection-item--cta">
     {% if section.settings.button_text != blank %}
-      {% render 'link'
-        style: section.settings.button_style
-        content: section.settings.button_text
+      {% render 'link',
+        style: section.settings.button_style,
+        content: section.settings.button_text,
         href: collection.url
       %}
     {% endif %}

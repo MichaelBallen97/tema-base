@@ -1,7 +1,7 @@
 {{ 'section.image-text.css' | asset_url | stylesheet_tag }}
 
 {% liquid
-  assign img_src = section.settings.image | image_url
+  assign img_src = section.settings.image
   assign ptop = section.settings.padding_top
   assign pbutton = section.settings.padding_button
   assign pleft = section.settings.padding_left
@@ -17,26 +17,24 @@
 <article class="section-image-text {{ section.settings.image_position }}  section-image-text-{{ section.id }}">
   <div class="section-image-text--content {{ section.settings.text_position }}">
     {% if section.settings.title != blank %}
-      <h2> {{ section.settings.title }} </h2>
+      <h2>{{ section.settings.title }}</h2>
     {% endif %}
-  
+
     {% if section.settings.content != blank %}
-      <p> {{ section.settings.content }} </p>
+      <p>{{ section.settings.content }}</p>
     {% endif %}
-  
+
     {% if section.settings.cta_text != blank %}
-      {% render 'link'
-        style: section.settings.cta_style
-        content: section.settings.cta_text
+      {% render 'link',
+        style: section.settings.cta_style,
+        content: section.settings.cta_text,
         href: section.settings.cta_url
       %}
     {% endif %}
   </div>
 
   <div class="section-image-text-img">
-    {% render 'render-image'
-      src: img_src
-    %}
+    {% render 'render-image', src: img_src, lazy: true %}
   </div>
 </article>
 

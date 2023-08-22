@@ -59,6 +59,7 @@
 
 .section-image-text-img img {
   width: 100%;
+  height: auto;
 }
 
 @media (max-width: 769px) {

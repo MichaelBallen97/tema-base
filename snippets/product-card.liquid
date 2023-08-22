@@ -1,21 +1,19 @@
-{% assign img_src = product.featured_image | image_url %}
+{% assign img_src = product.featured_image %}
 
-<product-card 
+<product-card
   class="product-card"
   selected-variant="{{ product.selected_or_first_available_variant.id }}"
   enable-add-cart="{{ settings.product_card_quick_add }}"
 >
   <section class="product-card--image">
     <a href="{{ product.url }}">
-      {% render 'render-image'
-        src: img_src
-      %}
+      {% render 'render-image', src: img_src, lazy: true %}
     </a>
   </section>
 
   <section class="product-card--title">
     <a href="{{ product.url }}">
-      <h3> {{ product.title }} </h3>
+      <h3>{{ product.title }}</h3>
     </a>
   </section>
 
@@ -26,28 +24,18 @@
   {% endif %}
 
   {% if settings.product_card_price %}
-    {% render 'product-price'
-      custom_class: "product-card--price"
-      product: product
-    %}
+    {% render 'product-price', custom_class: 'product-card--price', product: product %}
   {% endif %}
 
   {% if settings.product_card_variants_selector %}
     <section class="product-card--variants">
       <form action="/add-cart" class="product-add-form">
-        {% render 'product-variants'
-          product: product
-          type: "product-card"
-        %}
-  
+        {% render 'product-variants', product: product, type: 'product-card' %}
+
         {% if settings.product_card_quick_add %}
           {% assign button_text = 'products.product.add_to_cart' | t %}
-  
-          {% render 'button'
-            style: "primary"
-            type: "submit"
-            content: button_text
-          %}
+
+          {% render 'button', style: 'primary', type: 'submit', content: button_text %}
         {% endif %}
       </form>
     </section>

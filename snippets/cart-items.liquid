@@ -2,7 +2,7 @@
   <div class="cart-items--item">
     <section class="cart-item--product-info">
       <div class="cart-item--product-info-img">
-        {% assign img_src = item.product.featured_image | image_url %}
+        {% assign img_src = item.product.featured_image %}
         <a href="{{ item.product.url }}">
           {% render 'render-image', src: img_src %}
         </a>

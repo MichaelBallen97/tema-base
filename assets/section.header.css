@@ -31,6 +31,11 @@ header .navbar .navbar-second-nav {
   width: 20%;
 }
 
+header .navbar .navbar-logo img {
+  width: 100px;
+  height: auto;
+}
+
 header .navbar .navbar-nav {
   display: flex;
   justify-content: center;

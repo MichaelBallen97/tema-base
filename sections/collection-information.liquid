@@ -3,7 +3,7 @@
     {% case block.type %}
       {% when 'title' %}
         <article class="collection-info--title">
-          <h1> {{ collection.title }} </h1>
+          <h1>{{ collection.title }}</h1>
         </article>
       {% when 'description' %}
         <article class="collection-info--description">
@@ -13,28 +13,23 @@
         <section class="collection-info--banner">
           {% liquid
             if block.settings.custom_image != blank
-              assign img_src = block.settings.custom_image | image_url
+              assign img_src = block.settings.custom_image
             else
-              assign img_src = collection.featured_image | image_url
+              assign img_src = collection.featured_image
             endif
           %}
-          {% render 'render-image'
-            src: img_src
-          %}
+          {% render 'render-image', src: img_src %}
         </section>
     {% endcase %}
   {% endfor %}
 </section>
-
 
 {% schema %}
 {
   "name": "Collection information",
   "class": "collection-info",
   "tag": "section",
-  "settings": [
-
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "title",

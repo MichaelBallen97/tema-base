@@ -6,48 +6,40 @@
   {% endif %}
 
   {% liquid
-    assign img_src = section.settings.banner_image | image_url
-    assign img_src_mobile = section.settings.banner_image_mobile | image_url
+    assign img_src = section.settings.banner_image
+    assign img_src_mobile = section.settings.banner_image_mobile
 
     if img_src_mobile == blank
       assign img_src_mobile = img_src
     endif
   %}
 
-  {% render 'render-image'
-    src: img_src
-    tag: "Main banner"
-    custom_class: "main-banner--img"
-  %}
+  {% render 'render-image', src: img_src, custom_class: 'main-banner--img' %}
 
-  {% render 'render-image'
-    src: img_src_mobile
-    tag: "Main banner"
-    custom_class: "main-banner--img-mobile"
-  %}
+  {% render 'render-image', src: img_src_mobile, custom_class: 'main-banner--img-mobile' %}
 
   <section class="main-banner--content {{ section.settings.content_position }}">
     <article class="main-banner--content-article">
       {% if section.settings.banner_heading != blank %}
         <h1>{{ section.settings.banner_heading }}</h1>
       {% endif %}
-  
+
       {% if section.settings.banner_paragraph != blank %}
         <p>{{ section.settings.banner_paragraph }}</p>
       {% endif %}
-  
+
       {% if section.settings.banner_cta != blank %}
         {% liquid
           assign cta_text = section.settings.banner_cta
           assign cta_link = section.settings.banner_cta_url
           assign cta_style = section.settings.style_cta
         %}
-  
-        {% render 'link'
-          style: cta_style
-          content: cta_text
-          href: cta_link
-          custom_class: "main-banner--content-cta"
+
+        {% render 'link',
+          style: cta_style,
+          content: cta_text,
+          href: cta_link,
+          custom_class: 'main-banner--content-cta'
         %}
       {% endif %}
     </article>

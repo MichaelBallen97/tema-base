@@ -1,10 +1,10 @@
 {{ 'snippet.mukti-link-list.css' | asset_url | stylesheet_tag }}
 
 {% liquid
-  assign src_image = settings.logo | image_url
+  assign src_image = settings.logo
 
   if section.settings.sticky
-    assign shadow_class = "navbar-shadow"
+    assign shadow_class = 'navbar-shadow'
   endif
 %}
 
@@ -26,33 +26,24 @@
   }
 {% endstyle %}
 
-<main-menu 
+<main-menu
   class="navbar {{ shadow_class }}"
   open="false"
   id-hamburguer="hamburguer-icon"
 >
   <span id="hamburguer-icon" class="hamburguer-icon">
-    {% render 'icons'
-      type: "menu"
-    %}
+    {% render 'icons', type: 'menu' %}
   </span>
 
   <section class="navbar-items">
     <section class="navbar-logo">
-      {% render 'render-image'
-        src: src_image
-        width: settings.logo_width
-        custom_class: "navbar-logo--img"
-      %}
+      {% render 'render-image', src: src_image, custom_class: 'navbar-logo--img' %}
     </section>
-  
+
     <nav class="navbar-nav">
-      {% render 'multi-link-list'
-        menu: section.settings.main_menu
-        custom_class: section.settings.submenu_style
-      %}
+      {% render 'multi-link-list', menu: section.settings.main_menu, custom_class: section.settings.submenu_style %}
     </nav>
-  
+
     <nav class="navbar-second-nav">
       {% render 'multi-link-list' %}
     </nav>

@@ -1,44 +1,45 @@
-{% comment %} 
-IMPORTANT!!
-We should define slides with this structure:
+{% comment %}
+  IMPORTANT!!
+  We should define slides with this structure:
 
-<div class="swiper-slide">
-  ... childrens here
-</div>
-<div class="swiper-slide">
-  ... childrens here
-</div>
-<div class="swiper-slide">
-  ... childrens here
-</div>
-...
+  <div class="swiper-slide">
+    ... childrens here
+  </div>
+  <div class="swiper-slide">
+    ... childrens here
+  </div>
+  <div class="swiper-slide">
+    ... childrens here
+  </div>
+  ...
 {% endcomment %}
 
 {{ 'snippet.slider.css' | asset_url | stylesheet_tag: preload: true }}
 
 {% if section.settings.title != blank %}
-  <h2> {{ section.settings.title }} </h2>
+  <h2>{{ section.settings.title }}</h2>
 {% endif %}
 
 {% capture sliders %}
   {% for block in section.blocks %}
     <div class="swiper-slide">
-      {% assign img_src = block.settings.image | image_url %}
+      {% assign img_src = block.settings.image %}
       {% render 'render-image'
-        src: img_src
+        src: img_src,
+        lazy: true
       %}
     </div>
   {% endfor %}
 {% endcapture %}
 
-{% render 'slider'
-  direction: section.settings.direction
-  loop: section.settings.loop
-  sliders_per_page: section.settings.slider_per_page_dk
-  sliders_per_page_mobile: section.settings.slider_per_page_mb
-  autoplay: section.settings.autoplay
-  delay: section.settings.delay
-  pagination: section.settings.pagination
+{% render 'slider',
+  direction: section.settings.direction,
+  loop: section.settings.loop,
+  sliders_per_page: section.settings.slider_per_page_dk,
+  sliders_per_page_mobile: section.settings.slider_per_page_mb,
+  autoplay: section.settings.autoplay,
+  delay: section.settings.delay,
+  pagination: section.settings.pagination,
   sliders: sliders
 %}
 

@@ -8,6 +8,7 @@
 
 .product-card .product-card--image img {
   width: 100%;
+  height: auto;
 }
 
 .product-card .product-card--variants .product-add-form {

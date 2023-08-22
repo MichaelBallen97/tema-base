@@ -17,68 +17,62 @@
 <footer>
   {% for block in section.blocks %}
     {% case block.type %}
-      {% when "linklist" %}
+      {% when 'linklist' %}
         <section class="footer-item">
-          <h3> {{ block.settings.title }} </h3>
-          {% render 'link-list'
-            menu: block.settings.linklist
-          %}
+          <h3>{{ block.settings.title }}</h3>
+          {% render 'link-list', menu: block.settings.linklist %}
         </section>
 
-      {% when "logo" %}
+      {% when 'logo' %}
         <section class="footer-item">
           {% if block.settings.image != blank %}
-            {% assign image_src  = block.settings.image | image_url %}
-              {% render 'render-image' 
-                src: image_src
-                custom_class: "footer-logo"
-              %}
+            {% assign image_src = block.settings.image %}
+            {% render 'render-image', src: image_src, custom_class: 'footer-logo', lazy: true %}
           {% endif %}
-
         </section>
 
-      {% when "social_media" %}
+      {% when 'social_media' %}
         <section class="footer-item">
-          <h3> {{ block.settings.title }} </h3>
+          <h3>{{ block.settings.title }}</h3>
 
           <section class="icons-container">
             {% liquid
               if block.settings.facebook == true
-                render 'icons' type: "facebook"
-               endif
+                render 'icons', type: 'facebook'
+              endif
 
               if block.settings.instagram == true
-                render 'icons' type: "instagram"
+                render 'icons', type: 'instagram'
               endif
-   
+
               if block.settings.youtube == true
-                render 'icons' type: "youtube"
+                render 'icons', type: 'youtube'
               endif
-   
-               if block.settings.tiktok == true
-                 render 'icons' type: "tiktok"
-               endif
-   
-               if block.settings.twitter == true
-                 render 'icons' type: "twitter"
-               endif
-   
-               if block.settings.snapchat == true
-                 render 'icons' type: "snapchat"
-               endif
-   
-               if block.settings.tumblur == true
-                 render 'icons' type: "tumblur"
-               endif
-   
-               if block.settings.vimeo == true
-                 render 'icons' type: "vimeo"
-               endif
+
+              if block.settings.tiktok == true
+                render 'icons', type: 'tiktok'
+              endif
+
+              if block.settings.twitter == true
+                render 'icons', type: 'twitter'
+              endif
+
+              if block.settings.snapchat == true
+                render 'icons', type: 'snapchat'
+              endif
+
+              if block.settings.tumblur == true
+                render 'icons', type: 'tumblur'
+              endif
+
+              if block.settings.vimeo == true
+                render 'icons', type: 'vimeo'
+              endif
             %}
           </section>
         </section>
       {% else %}
-        
+
     {% endcase %}
   {% endfor %}
 

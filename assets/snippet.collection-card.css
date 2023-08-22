@@ -8,6 +8,7 @@
 
 .collection-item .collection-item--img img {
   width: 100%;
+  height: auto;
 }
 
 .collection-item .collection-item--description {
