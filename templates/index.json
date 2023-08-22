@@ -183,12 +183,103 @@
     },
     "tabs": {
       "type": "tabs",
+      "blocks": {
+        "05069277-5991-4570-9500-5264ccb012e6": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab title",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla."
+          }
+        },
+        "bf2a2065-c6c1-41bd-88b1-d0212321b100": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab title",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "57dd4261-ea31-440c-aa3f-117e503f65b3": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab title",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "9eb8674b-64bc-46a6-a42b-f429f3b9b3a9": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab title",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum."
+          }
+        },
+        "a6e1759a-7e91-4880-929c-c6db960ea05e": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab title",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit."
+          }
+        },
+        "990200e3-05a8-42ef-bf6a-ba1f7fc06089": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Tab title",
+            "tab_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        }
+      },
+      "block_order": [
+        "05069277-5991-4570-9500-5264ccb012e6",
+        "bf2a2065-c6c1-41bd-88b1-d0212321b100",
+        "57dd4261-ea31-440c-aa3f-117e503f65b3",
+        "9eb8674b-64bc-46a6-a42b-f429f3b9b3a9",
+        "a6e1759a-7e91-4880-929c-c6db960ea05e",
+        "990200e3-05a8-42ef-bf6a-ba1f7fc06089"
+      ],
       "settings": {
+        "title": "Tabs"
       }
     },
     "accordion": {
       "type": "accordion",
+      "blocks": {
+        "533f16b5-8148-426b-995a-fd9dc7a99e1e": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion 1",
+            "accordion_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "adc1e69c-2ced-44e8-9469-dc49d47de32c": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion 1",
+            "accordion_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "3a82720d-808f-4b0f-97c6-9b377046240f": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion 1",
+            "accordion_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        },
+        "0ce974fe-c64b-4094-b3b9-30fa1e115599": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Accordion 1",
+            "accordion_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt velit a lobortis blandit. Aenean suscipit, leo eget sagittis finibus, enim tortor convallis justo, sit amet suscipit nunc nibh at ipsum. Aliquam sollicitudin vitae velit ac fringilla. Vivamus ullamcorper sollicitudin neque, sit amet sagittis turpis mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+          }
+        }
+      },
+      "block_order": [
+        "533f16b5-8148-426b-995a-fd9dc7a99e1e",
+        "adc1e69c-2ced-44e8-9469-dc49d47de32c",
+        "3a82720d-808f-4b0f-97c6-9b377046240f",
+        "0ce974fe-c64b-4094-b3b9-30fa1e115599"
+      ],
       "settings": {
+        "title": "",
+        "toggle": true
       }
     },
     "pop-up": {
